@@ -27,12 +27,14 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 
+gem 'heroku'
+
 gem 'jquery-rails'
 
-gem 'protected_attributes'
-gem 'rails-observers'
-gem 'actionpack-page_caching'
-gem 'actionpack-action_caching'
+# gem 'protected_attributes'
+# gem 'rails-observers'
+# gem 'actionpack-page_caching'
+# gem 'actionpack-action_caching'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
