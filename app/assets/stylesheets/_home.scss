@@ -1,0 +1,36 @@
+.headline{
+	margin:.35em 0 0;
+	font-size: 6em;
+	text-align: center;
+}
+.tagline{
+	margin:0 0 1em;
+	font-size: 1.8em;
+	text-align: center;
+}
+
+.home-wrap{
+	margin:50px auto;
+	max-width:750px;
+}
+
+.block{
+	margin:0 auto 20px;
+	padding:20px;
+	color:#fff;
+	text-shadow:rgba(0,0,0,0.3) 0px 1px 0px;
+	background:#3ea3ea;
+	overflow: hidden;
+	@include border-radius(5px);
+	.h3{
+		margin:0 0 1em;
+	}
+	.btn{
+		display: block;
+		text-align: center;
+		a{
+			padding:.75em 2em;
+			display: inline-block;
+		}
+	}
+}

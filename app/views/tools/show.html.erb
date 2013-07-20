@@ -1,0 +1,19 @@
+<% content_for :head do %>
+	<%= @tool.head %>
+<% end %>
+
+<% content_for :nav do %>
+	<%= link_to "Docs", tool_docs_path(@tool) %>
+<% end %>
+
+
+<%= render "shared/nav" %>
+
+<section class="header">
+	<div class="wrap" style="text-align:center;">
+		<h2 class="tagline"><%= @tool.title %></h2>
+		<p style="max-width:500px;margin:20px auto;"><%= @tool.desc %></p>
+	</div>
+</section>
+
+<p><%= @tool.body %></p>
