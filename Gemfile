@@ -12,6 +12,7 @@ end
 
 group :production do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 
 
@@ -31,10 +32,10 @@ gem 'heroku'
 
 gem 'jquery-rails'
 
-# gem 'protected_attributes'
-# gem 'rails-observers'
-# gem 'actionpack-page_caching'
-# gem 'actionpack-action_caching'
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
