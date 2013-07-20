@@ -3,8 +3,6 @@ class ToolsController < ApplicationController
 		@tools = Tool.all
 	end
 	def show
-		# @tool = Tool.friendly.find(params[:id])
-		# @tool_url = Tool.friendly.find(params[:id])
 		@tool = Tool.find_by_url(params[:id])
 		@tool.head = @tool.head.html_safe
 		@tool.body = @tool.body.html_safe
@@ -16,9 +14,9 @@ class ToolsController < ApplicationController
 		@tool = Tool.new(params[:tool])
 		respond_to do |format|
 			if @tool.save
-				redirect_to @tool
+				format.html { redirect_to @tool }
 			else
-				puts "error"
+				format.html { puts "error" }
 			end
 		end
 	end
@@ -29,10 +27,10 @@ class ToolsController < ApplicationController
 	    @tool = Tool.find_by_url(params[:id])
 
 	    respond_to do |format|
-			if @tool.save
-				redirect_to tool_path(@tool)
+			if @tool.update_attributes(params[:tool])
+				format.html { redirect_to tool_path(@tool) }
 			else
-				redirect_to tool_path(@tool)
+				format.html { puts "no!" }
 			end
 	    end
 	end
