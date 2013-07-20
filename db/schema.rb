@@ -11,13 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130720170321) do
+ActiveRecord::Schema.define(version: 20130720201638) do
 
   create_table "codes", force: true do |t|
     t.string   "name"
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "docs", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "url"
+    t.integer  "tool_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tool_docs", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tools", force: true do |t|
@@ -27,6 +43,7 @@ ActiveRecord::Schema.define(version: 20130720170321) do
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "url"
   end
 
 end

@@ -1,0 +1,218 @@
+body {
+  background: #f0f0f0; }
+
+.narrow {
+  max-width: 700px; }
+
+.ugh {
+  clear: both; }
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+.glyph {
+  display: inline-block;
+  font-size: 2em;
+  margin: 0 20px; }
+
+.beta {
+  top: -5px;
+  font-size: 0.5em;
+  color: #000;
+  text-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px;
+  position: absolute; }
+
+.divider {
+  margin: 25px auto;
+  border: 0;
+  border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+  border-top: rgba(0, 0, 0, 0.1) 1px solid; }
+
+.form-wrap {
+  max-width: 500px;
+  float: left; }
+  @media (max-width: 1050px) {
+    .form-wrap {
+      width: 100%;
+      float: none;
+      max-width: 100%; } }
+
+.form-block {
+  padding: 10px 0;
+  border-bottom: #fff 1px solid;
+  box-shadow: inset rgba(0, 0, 0, 0.1) 0px -1px 0px; }
+  .form-block label {
+    display: block;
+    margin: 0 0 10px; }
+  .form-block input, .form-block textarea {
+    display: block;
+    width: 100%;
+    padding: 7px;
+    font-size: 1em;
+    border: #CCC 1px solid;
+    border-radius: 3px;
+    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 3px;
+    outline: none;
+    -webkit-transition: box-shadow 0.3s ease-in-out; }
+    .form-block input:focus, .form-block textarea:focus {
+      box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 3px, #0088cc 0px 0px 0px 1px, #0088cc 0px 0px 7px; }
+  .form-block .desc {
+    font-size: 0.9em;
+    line-height: 1.4em;
+    color: #777; }
+
+input[type=checkbox] {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  float: right;
+  width: 20px;
+  height: 20px;
+  padding: 9px;
+  font-size: 12px;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  -webkit-appearance: none;
+  cursor: pointer; }
+  input[type=checkbox]:active {
+    box-shadow: inset #CCC 0px 0px 5px; }
+  input[type=checkbox]:active:before, input[type=checkbox]:checked:before {
+    content: "\2714";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -7px -5px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px; }
+
+.line-title {
+  padding: 0 0 10px;
+  border-bottom: #CCC 3px solid; }
+
+.line-label {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.25em; }
+
+.limit {
+  color: #CCC;
+  font-size: 0.9em;
+  float: right; }
+
+.low {
+  color: blue; }
+
+.out {
+  color: red; }
+
+.inactive {
+  opacity: 0.5; }
+
+.active {
+  opacity: 1;
+  display: block; }
+
+.off {
+  display: none; }
+
+.help {
+  text-align: right; }
+  .help .tooltip {
+    display: none;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    background: #fff;
+    -webkit-transition: all 0.4s ease-in-out;
+    text-align: left;
+    z-index: 999; }
+  .help .init {
+    display: block;
+    opacity: 1; }
+
+.media {
+  display: block; }
+  .media .img {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px; }
+  .media .desc {
+    display: inline-block;
+    vertical-align: top; }
+
+.output-wrap {
+  margin: 20px auto 20px 50px;
+  float: left;
+  width: 500px; }
+  @media (max-width: 1050px) {
+    .output-wrap {
+      width: auto;
+      float: none; }
+      .output-wrap .output-outer {
+        display: block;
+        width: auto;
+        clear: both;
+        position: relative; } }
+
+.output-outer {
+  width: 550px;
+  border: rgba(0, 0, 0, 0.3) 1px solid;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 30px;
+  overflow: hidden; }
+
+.output-head {
+  margin: 0;
+  padding: 15px 0;
+  background-image: -webkit-linear-gradient(top, #f0f0f0, #dddddd);
+  box-shadow: inset rgba(255, 255, 255, 0.7) 0px 1px 0px, inset rgba(0, 0, 0, 0.2) 0px -1px 0px; }
+  .output-head a {
+    margin: 0 20px;
+    padding: 5px 10px;
+    border: #0f3c6a 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0px;
+    background-image: -webkit-linear-gradient(top, #2173c5, #155697); }
+    .output-head a:hover {
+      background-image: -webkit-linear-gradient(top, #3b8cde, #155697); }
+    .output-head a:active {
+      background-image: -webkit-linear-gradient(top, #2173c5, 10%, #155697);
+      box-shadow: inset rgba(0, 0, 0, 0.4) 0px 2px 5px; }
+
+.output {
+  max-height: 450px;
+  background: #fff;
+  font-size: 0.75em;
+  color: #000;
+  text-shadow: none;
+  margin: auto;
+  padding: 10px 20px;
+  overflow: auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
+  .output pre {
+    display: block;
+    margin-bottom: 15px; }
+
+.complete {
+  max-width: 700px;
+  margin: 40px auto 100px;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px; }
+  .complete p {
+    text-align: left; }
