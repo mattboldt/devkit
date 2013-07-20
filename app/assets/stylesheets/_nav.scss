@@ -1,0 +1,42 @@
+.nav-wrap{
+	position: relative;
+	margin:0;
+	padding:0;
+	width:100%;
+	@include linear-gradient(top, #f8f8f8, #eaeaea);
+	box-shadow:inset rgba(0,0,0,0.1) 0px -1px 0px, inset rgba(255,255,255,0.5) 0px 1px 0px, rgba(0,0,0,0.3) 0px 0px 5px;
+	overflow: hidden;
+}
+
+.main-nav{
+	display: block;
+	padding:0 10px;
+	float: left;
+	margin:0 auto;
+	li{
+		margin:0;
+		padding:0;
+	}
+	a{
+		display: block;
+		padding:20px 20px;
+		color:#333;
+		box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, rgba(255,255,255,0.7) 1px 0px 0px;
+	}
+}
+
+.nav-search{
+	display: block;
+	float:left;
+	margin:5px 10px;
+	padding:10px;
+	width:100px;
+	height:25px;
+	border-radius:5px;
+	border:#e0e0e0 1px solid;
+	outline:none;
+	-webkit-transition:width 0.3s ease-in-out;
+	&:focus{
+		width:300px;
+	}
+}

@@ -1,0 +1,26 @@
+<%= form_for(@tool) do |f| %>
+	<div class="field">
+	    <%= f.label :title %><br />
+	    <%= f.text_area :title, :cols => "50", :rows => "5" %>
+	</div>
+	<div class="field">
+		<%= f.label :url %><br />
+		<%= f.text_area :url, :cols => "50", :rows => "5" %>
+	</div>
+	<div class="field">
+		<%= f.label :desc %><br />
+		<%= f.text_area :desc, :cols => "50", :rows => "5" %>
+	</div>
+	<div class="field">
+		<%= f.label :head %><br />
+		<%= f.text_area :head, :cols => "50", :rows => "5" %>
+	</div>
+	<div class="field">
+		<%= f.label :body %><br />
+		<%= f.text_area :body, :cols => "50", :rows => "5" %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>

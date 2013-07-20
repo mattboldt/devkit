@@ -1,0 +1,4 @@
+<h1>docs</h1>
+<% for docs in @docs %>
+	<%= link_to docs.title, tool_docs_path(@tool) %>
+<% end %>
