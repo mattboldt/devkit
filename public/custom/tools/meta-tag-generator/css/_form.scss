@@ -1,0 +1,135 @@
+.form-wrap{
+	max-width:500px;
+	float:left;
+	@media (max-width: 1050px){
+		width:100%;
+		float:none;
+		max-width: 100%;
+	}
+}
+
+.form-block{
+	padding:10px 0;
+	border-bottom:#fff 1px solid;
+	box-shadow:inset rgba(0,0,0,0.1) 0px -1px 0px;
+	label{
+		display: block;
+		margin:0 0 10px;
+	}
+	input, textarea{
+		display: block;
+		width:100%;
+		padding:7px;
+		font-size: 1em;
+		border:#CCC 1px solid;
+		border-radius:3px;
+		box-shadow:inset rgba(0,0,0,0.1) 0 1px 3px;
+		outline: none;
+		-webkit-transition:box-shadow 0.3s ease-in-out;
+		&:focus{
+			box-shadow:inset rgba(0,0,0,0.1) 0 1px 3px, #08C 0px 0px 0px 1px, #08C 0px 0px 7px;
+		}
+	}
+	.desc{
+		font-size: 0.9em;
+		line-height: 1.4em;
+		color:#777;
+	}
+}
+input[type=checkbox]{
+	display: inline-block;
+    position: relative;
+    vertical-align: middle;
+	float:right;
+	width:20px;
+	height:20px;
+    padding: 9px;
+    font-size: 12px;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    border-radius: 3px;
+    -webkit-appearance: none;
+    cursor:pointer;
+	&:active{
+		box-shadow:inset #CCC 0px 0px 5px;
+	}
+
+    &:active:before, &:checked:before{
+		content:"\2714";
+		position: absolute;
+		top:50%;
+		left:50%;
+		margin:-7px -5px;
+		display: block;
+		width:10px;
+		height:10px;
+		border-radius:10px;
+    }
+}
+
+.line-title{
+	padding:0 0 10px;
+	border-bottom:#CCC 3px solid;
+}
+
+.line-label{
+	display: inline-block;
+	font-weight: 500;
+	font-size: 1.25em;
+}
+.limit{
+	color:#CCC;
+	font-size: 0.9em;
+	float:right;
+}
+.low{
+	color:blue;
+}
+.out{
+	color:red;
+}
+.inactive{
+	opacity:0.5;
+}
+.active{
+	opacity:1;
+	display: block;
+}
+.off{
+	display: none;
+}
+
+
+
+.help{
+	text-align: right;
+	.tooltip{
+		display: none;
+		position: absolute;
+		left:0;
+		opacity:0;
+		background:#fff;
+		-webkit-transition:all 0.4s ease-in-out;
+		text-align: left;
+		z-index:999;
+	}
+	.init{
+		display: block;
+		opacity:1;
+	}
+
+}
+
+.media{
+	display: block;
+	.img{
+		display: inline-block;
+		vertical-align: top;
+		margin-right:10px;
+	}
+	.desc{
+		display: inline-block;
+		vertical-align: top;
+	}
+}
