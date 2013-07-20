@@ -29,8 +29,6 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 
-gem 'heroku'
-
 gem 'jquery-rails'
 
 gem 'protected_attributes'
