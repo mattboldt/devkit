@@ -1,0 +1,109 @@
+@import "normalize";
+@import "base";
+
+*{
+	box-sizing:border-box;
+}
+
+body{
+	font-family: "Ubuntu", sans-serif;
+	font-size: 100%;
+	color:#222;
+	background-color:#fff;
+	text-shadow:#fff 0px 1px 0px;
+}
+p{
+	line-height: 1.5em;
+}
+a{
+	text-decoration: none;
+	color:#08C;
+}
+.wrap{
+	position: relative;
+	max-width:1100px;
+	margin:auto;
+	padding:0 20px;
+}
+
+.narrow{
+	max-width:700px;
+}
+
+.ugh{
+	clear:both;
+}
+
+.header{
+	margin:0;
+	padding:10px;
+	width:100%;
+	color:#fff;
+	text-shadow:rgba(0,0,0,0.3) 0px 1px 0px;
+	background-color:#3ea3ea;
+}
+
+h1, .h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+h2, .h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+h3, .h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+h4, .h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+h5, .h5 {
+    font-size: 0.83em;
+    margin: 1.67em 0;
+}
+
+h6, .h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+
+.nav{
+	margin:0;
+	padding:0;
+	list-style: none;
+	overflow: hidden;
+	li{
+		display: inline-block;
+		margin:0;
+		padding:0;
+		vertical-align: top;
+	}
+	a{
+		display: block;
+	}
+}
+
+
+@import "nav";
+
+.btn{
+	display: inline-block;
+	a{
+		display: block;
+		padding:.75em 1em;
+		color:#333;
+		font-size: 1em;
+		text-shadow:rgba(255,255,255,0.9) 0px 1px 0px;
+		box-shadow:inset rgba(255,255,255,0.7) 0px 1px 0px, inset rgba(0,0,0,0.1) 0px -1px 0px;
+		@include linear-gradient(top, #f8f8f8, #EEE);
+		@include border-radius(5px);
+	}
+}
+
+@import "home";
