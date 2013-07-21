@@ -8,7 +8,7 @@ $(function(){
 	$(".help").click(function(e){
 		e.preventDefault();
 		$(this).find(".tooltip").addClass("init");
-			
+
 	});
 	$(".close-tooltip").click(function(e){
 		e.preventDefault();
@@ -21,49 +21,49 @@ $(function(){
 		});
 
 	setInterval(function(){
-		
+
 		// Bit of generic data to test if saved data exists on page load
 		localStorage.setItem("flag", "set");
-		
+
 		// serializeArray is awesome and powerful
 		var data = $(".meta-info").serializeArray();
-		
+
 		// iterate over results
 		$.each(data, function(i, obj) {
 			// HTML5 magic!!
 			localStorage.setItem(obj.name, obj.value);
-		});				
-		
+		});
+
 	}, 5000);
-	
-	// Test if there is already saved data	
+
+	// Test if there is already saved data
 	if (localStorage.getItem("flag") == "set") {
-		
+
 		// Same iteration stuff as before
 		var data = $(".meta-info").serializeArray();
-		
+
 		// Only the only way we can select is by the name attribute, but jQuery is down with that.
 		$.each(data, function(i, obj) {
 			$("[name='" + obj.name +"']").val(localStorage.getItem(obj.name));
 		});
-		
+
 	}
-	
+
 	// Provide mechanism to remove data. You'd probably actually remove it not just kill the flag
 	$("#clearData").click(function(e) {
-		
+
 		e.preventDefault();
-		
+
 		localStorage.setItem("flag", "");
-		
+
 	});
 
-	var $output   = $(".output-outer"), 
+	var $output   = $(".output-outer"),
         $window    = $(window),
         offset     = $("#body").offset(),
         topPadding = 15;
 
-	
+
 	    $window.scroll(function() {
 	    	if ($output.css("width") == "550px"){
 		        if ($window.scrollTop() > offset.top) {
@@ -147,12 +147,12 @@ $(function(){
 
 			strings = $.extend({}, inputs);
 
-			
+
 				$(".__base")
 					.text(
 						"<!-- Add to html tag -->\n" +
 						"<html itemscope itemtype=\"http://schema.org/" + strings.page_type + "\">\n\n" +
-				 		//asd 
+				 		//asd
 				 		"<!-- Basic meta info -->\n" +
 						"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n" +
 						"<meta name=\"name\" content=\"" + self.convertHTML(strings.meta_web_name) + "\" />\n" +
@@ -160,14 +160,14 @@ $(function(){
 
 						"<!-- Page title -->\n" +
 						"<title>" + self.convertHTML(strings.meta_page_title) + "</title>\n\n" +
-						
+
 
 						"<!-- G+ Open Graph -->\n" +
 						"<meta property=\"og:title\" content=\"" + self.convertHTML(strings.og_title) + "\" />\n" +
 						"<meta property=\"og:image\" content=\"" + self.convertHTML(strings.og_image) + "\" />\n" +
 						"<meta property=\"og:description\" content=\"" + self.convertHTML(strings.og_desc) + "\" />\n"
 					);
-				
+
 				if ($("[name=toggle_twitter]").is(':checked')){
 					$("#twitter-data").attr("class", "active");
 					$(".__twitter").text(
@@ -185,7 +185,7 @@ $(function(){
 					$("#twitter-data").attr("class", "inactive");
 					$(".__twitter").text("");
 				}
-				
+
 				if ($("[name=toggle_google]").is(':checked')){
 					$("#google-plus-data").attr("class", "active");
 					$(".__google").text(
@@ -198,7 +198,7 @@ $(function(){
 					$("#google-plus-data").attr("class", "inactive");
 					$(".__google").text("");
 				}
-				
+
 
 				if ($("[name=toggle_dns]").is(':checked')){
 					$(".__dns").text(
@@ -225,7 +225,7 @@ $(function(){
 				else{
 					$(".__jquery").text("");
 				}
-				
+
 
 				if ($("[name=toggle_mobile]").is(':checked')){
 					$(".__mobile").text(
@@ -236,7 +236,7 @@ $(function(){
 				else{
 					$(".__mobile").text("");
 				}
-			
+
 		}
 
 		, countChar: function() {
@@ -318,7 +318,7 @@ jQuery.fn.selectText = function(){
         range.moveToElementText(element);
         range.select();
     } else if (window.getSelection) {
-        selection = window.getSelection();        
+        selection = window.getSelection();
         range = document.createRange();
         range.selectNodeContents(element);
         selection.removeAllRanges();
@@ -327,4 +327,3 @@ jQuery.fn.selectText = function(){
 };
 
 
-	

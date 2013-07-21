@@ -1,9 +1,22 @@
 <div class="nav-wrap">
 	<ul class="nav main-nav">
 		<li><a href="/"><strong>webkit.io</strong></a></li>
-		<li><a href="#">CSS &amp; HTML</a></li>
-		<li><a href="#">SEO</a></li>
-		<li><a href="#">Graphics</a></li>
+		<li><%= link_to "Tools", tools_path %>
+			<ul class="main-nav-dropdown">
+				<% for tool in @tools %>
+					<li><%= link_to tool.title, tool_path(tool) %></li>
+				<% end %>
+			</ul>
+		</li>
+		<li><%= link_to "Code", codes_path %>
+			<ul class="main-nav-dropdown">
+				<% for code in @codes %>
+					<li><%= link_to code.title, code_path(code) %></li>
+				<% end %>
+				<li><a href="#">Cat 1</a></li>
+				<li><a href="#">Cat </a></li>
+			</ul>
+		</li>
 	</ul>
 	<input class="nav-search" type="search" placeholder="Search..."/>
 </div>
