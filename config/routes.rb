@@ -1,7 +1,8 @@
 Webkit::Application.routes.draw do
 
+  get "/search" => "search#index"
+
   root :to => "home#index"
-  get '/tools', to: redirect('/')
 
   resources :tools do
     resources :docs, :controller => "tools/docs"
