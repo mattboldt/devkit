@@ -7,7 +7,10 @@ class Tool < ActiveRecord::Base
 
 	accepts_nested_attributes_for :docs
 
-	searchable do
-		text :title, :desc
-	end
+	# searchable do
+	# 	text :title, :desc
+	# end
+
+	acts_as_taggable
+	acts_as_taggable_on :tags
 end

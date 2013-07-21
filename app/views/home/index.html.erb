@@ -14,6 +14,7 @@
 			<div class="block">
 				<h3 class="h3"><%= tool.title %></h3>
 				<p><%= tool.desc %></p>
+				<p><%= tool.tags %></p>
 				<div class="btn btn-small">
 					<%= link_to "View", tool %>
 				</div>
@@ -22,8 +23,7 @@
 
 		<% for code in @codes %>
 			<div class="block">
-				<h3 class="h3"><%= code.title %></h3>
-				<p><%= code.desc %></p>
+				<h3 class="h3"><%= code.name %></h3>
 				<div class="btn btn-small">
 					<%= link_to "View", code %>
 				</div>

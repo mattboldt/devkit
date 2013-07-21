@@ -9,12 +9,12 @@ class CodesController < ApplicationController
 		@code = Code.new
 	end
 	def create
-		@code = Code.new
+		@code = Code.new(params[:code])
 		respond_to do |format|
 			if @code.save
-				puts "saved"
+				format.html { puts "saved" }
 			else
-				puts "error"
+				format.html { puts "error" }
 			end
 		end
 	end
