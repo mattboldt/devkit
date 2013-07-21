@@ -31,6 +31,7 @@ end
 
 gem 'jquery-rails'
 
+gem 'acts-as-taggable-on'
 
 gem 'protected_attributes'
 gem 'rails-observers'
