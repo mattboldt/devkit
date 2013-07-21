@@ -6,4 +6,8 @@ class Tool < ActiveRecord::Base
 	end
 
 	accepts_nested_attributes_for :docs
+
+	searchable do
+		text :title, :desc
+	end
 end
