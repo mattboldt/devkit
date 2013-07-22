@@ -1,5 +1,5 @@
 class Tool < ActiveRecord::Base
-	attr_accessible :body, :head, :title, :url, :desc
+	attr_accessible :body, :head, :title, :url, :desc, :category_id
 	has_many :docs
 	def to_param
 		url

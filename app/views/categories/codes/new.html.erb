@@ -1,0 +1,14 @@
+<%= form_for [@category, @codes] do |f| %>
+	<div class="field">
+	    <%= f.label :name %><br />
+	    <%= f.text_area :name, :cols => "50", :rows => "5" %>
+	</div>
+	<div class="field">
+		<%= f.label :body %><br />
+		<%= f.text_area :body, :cols => "50", :rows => "5" %>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>

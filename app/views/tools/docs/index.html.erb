@@ -1,4 +1,4 @@
 <h1>docs</h1>
 <% for doc in @docs %>
-	<%= link_to doc.title, doc.url %>
+	<%= link_to doc.title, [@tool, doc] %>
 <% end %>

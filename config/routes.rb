@@ -4,13 +4,21 @@ Webkit::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :tools do
-    resources :docs, :controller => "tools/docs"
-  end
+resources :tools do
+  resources :docs, :controller => "tools/docs"
+end
 
-  resources :codes, :path => "code" do
-    resources :categories
-  end
+  # resources :categories do
+  #   resources :codes, :controller => "categories/codes"
+
+  # end
+
+    get "/categories/edit" => "categories#edit"
+    get "/categories/new" => "categories#new"
+
+    resources :categories, :path => "/" do
+        resources :codes, :path => "/", :controller => "categories/codes"
+    end
 
 
   # The priority is based upon order of creation:

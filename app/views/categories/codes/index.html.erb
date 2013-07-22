@@ -1,0 +1,5 @@
+<h1>All in <%= @category.name %></h1>
+<% for code in @codes do %>
+	<p><%= code.name %>
+	<%= code.body %> | <%= link_to "Go", [@category, code]%></p>
+<% end %>
