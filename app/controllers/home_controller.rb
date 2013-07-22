@@ -1,6 +1,3 @@
 class HomeController < ApplicationController
-	def index
-		@tools = Tool.all
-		@codes = Code.all
-	end
+	before_filter :get_nav_links
 end
