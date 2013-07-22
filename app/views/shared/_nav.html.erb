@@ -8,13 +8,11 @@
 				<% end %>
 			</ul>
 		</li>
-		<li><%= link_to "Code", codes_path %>
+		<li><%= link_to "Code", categories_path %>
 			<ul class="main-nav-dropdown">
-				<% for code in @codes %>
-					<li><%= link_to code.name, code_path(code) %></li>
+				<% for category in @categories %>
+					<li><%= link_to category.name, category_path(category) %></li>
 				<% end %>
-				<li><a href="#">Cat 1</a></li>
-				<li><a href="#">Cat </a></li>
 			</ul>
 		</li>
 	</ul>
