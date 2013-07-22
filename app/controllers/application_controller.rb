@@ -3,6 +3,6 @@ protect_from_forgery
 
 	def get_nav_links
 		@tools = Tool.all
-		@codes = Code.all
+		@categories = Category.all
 	end
 end

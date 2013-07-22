@@ -1,6 +1,4 @@
 class Code < ActiveRecord::Base
-  attr_accessible :body, :name
-
-  acts_as_taggable
-  acts_as_taggable_on :tags
+  attr_accessible :body, :name, :category_id
+  belongs_to :category
 end
