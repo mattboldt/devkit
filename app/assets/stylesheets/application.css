@@ -10,5 +10,5 @@
  *
  *= require_self
  *= require main
- *= require highlight/prism.css
+ *= require "highlight/prism.css"
  */

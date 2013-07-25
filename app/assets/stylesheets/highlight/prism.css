@@ -115,7 +115,7 @@ pre[data-line] {
 .language-markup .token.tag,
 .language-markup .token.attr-name,
 .language-markup .token.punctuation  {
-	color: hsl(33, 33%, 52%); /* #AC885B */
+	color: hsl(33, 33%, 52%);
 }
 
 /* Text Selection colour */
