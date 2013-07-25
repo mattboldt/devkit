@@ -1,5 +1,4 @@
 class CategoriesController < ApplicationController
-	before_filter :get_nav_links
 	def index
 		@categories = Category.all
 	end

@@ -15,7 +15,7 @@ end
   #   resources :codes, :controller => "categories/codes"
 
   # end
-
+    get "/categories/" => "categories#index"
     get "/categories/edit" => "categories#edit"
     get "/categories/new" => "categories#new"
 
