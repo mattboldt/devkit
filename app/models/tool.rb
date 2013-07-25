@@ -1,5 +1,6 @@
 class Tool < ActiveRecord::Base
 	attr_accessible :body, :head, :title, :url, :desc, :category_id
+	validates_uniqueness_of :url
 	has_many :docs
 	def to_param
 		url
@@ -11,6 +12,6 @@ class Tool < ActiveRecord::Base
 	# 	text :title, :desc
 	# end
 
-	acts_as_taggable
-	acts_as_taggable_on :tags
+	# acts_as_taggable
+	# acts_as_taggable_on :tags
 end
