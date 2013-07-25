@@ -23,6 +23,9 @@
 		padding:0;
 		position: relative;
 		overflow: visible;
+		ul{
+			z-index:9999;
+		}
 		&:hover ul{
 			left:0px;
 		}

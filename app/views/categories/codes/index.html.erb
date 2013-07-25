@@ -1,5 +1,17 @@
-<h1>All in <%= @category.name %></h1>
-<% for code in @codes do %>
-	<p><%= code.name %>
-	<%= code.body %> | <%= link_to "Go", [@category, code]%></p>
-<% end %>
+
+<div class="home-wrap">
+	<h1 class="code-header">All in <%= @category.name %></h1>
+	<% for code in @codes do %>
+		<div class="code--block">
+			<div class="code--title">
+				<%= code.name %>
+			</div>
+			<div class="code--body">
+				<%= code.body.html_safe %>
+			</div>
+			<div class="code--foot">
+				<%= link_to "View", [@category, code]%>
+			</div>
+		</div>
+	<% end %>
+</div>
