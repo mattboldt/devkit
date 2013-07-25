@@ -5,7 +5,9 @@ class Tool < ActiveRecord::Base
 	def to_param
 		url
 	end
-
+	def before_save
+		url = url.downcase
+	end
 	accepts_nested_attributes_for :docs
 
 	# searchable do

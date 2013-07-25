@@ -5,4 +5,7 @@ class Code < ActiveRecord::Base
   def to_param
   	url
   end
+	def before_save
+		url = url.downcase
+	end
 end
