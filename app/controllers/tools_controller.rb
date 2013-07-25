@@ -1,5 +1,4 @@
 class ToolsController < ApplicationController
-	before_filter :get_nav_links
 	def index
 		@tools = Tool.all
 	end
