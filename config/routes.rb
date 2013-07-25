@@ -1,8 +1,11 @@
 Webkit::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "/search" => "search#index"
 
   root :to => "home#index"
+
 
 resources :tools do
   resources :docs, :controller => "tools/docs"

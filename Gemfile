@@ -20,7 +20,6 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0'
   gem 'coffee-rails', '~> 4.0.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -29,9 +28,15 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 
+gem 'sass-rails',   '~> 4.0.0'
 gem 'jquery-rails'
 
-gem 'acts-as-taggable-on'
+gem 'devise',              github: 'plataformatec/devise'
+gem 'responders',          github: 'plataformatec/responders'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'ransack',             github: 'ernie/ransack', branch: 'rails-4'
+gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'formtastic',          github: 'justinfrench/formtastic'
 
 gem 'protected_attributes'
 gem 'rails-observers'

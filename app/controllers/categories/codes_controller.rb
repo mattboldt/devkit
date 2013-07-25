@@ -5,7 +5,7 @@ class Categories::CodesController < ApplicationController
 	end
 	def show
 		@category = Category.find_by_url(params[:category_id])
-		@code = @category.codes.find(params[:id])
+		@code = @category.codes.find_by_url(params[:id])
 	end
 	def new
 		@category = Category.find_by_url(params[:category_id])
