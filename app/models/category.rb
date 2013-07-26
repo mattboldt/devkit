@@ -8,3 +8,4 @@ class Category < ActiveRecord::Base
 		url = url.downcase
 	end
 end
+ActiveAdmin.register Category, :as => "Code Categories"

@@ -1,6 +1,6 @@
 ActiveAdmin.register Tool do
     before_filter :only => [:show, :edit, :update, :destroy] do
-        @tool = Tool.find_by_url(params[:id])
+        @dev_tools = Tool.find_by_url(params[:id])
       end
 
 	  index do
