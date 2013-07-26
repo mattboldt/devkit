@@ -1,4 +1,11 @@
 
+<%= render "category_nav" %>
+<script>
+$(function(){
+	$(".category--<%= @category.url %>").addClass("category--active");
+});
+</script>
+
 <div class="home-wrap">
 	<h1 class="code-header">All in <%= @category.name %></h1>
 	<% for code in @codes do %>
