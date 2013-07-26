@@ -10,15 +10,15 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
-    section "Recent Tools" do
-        table_for Tool.order("created_at").limit(5) do
-          column :title do |tool|
-            link_to tool.title, [:admin, tool]
-          end
-          column :created_at
-        end
-        strong { link_to "View All Tools", admin_tools_path }
-      end
+    # section "Recent Tools" do
+    #     table_for Tool.order("created_at").limit(5) do
+    #       column :title do |tool|
+    #         link_to tool.title, [:admin, tool]
+    #       end
+    #       column :created_at
+    #     end
+    #     strong { link_to "View All Tools", admin_dev_tools_path }
+    #   end
 
     # Here is an example of a simple dashboard with columns and panels.
     #

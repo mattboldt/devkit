@@ -1,5 +1,41 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
-<% for tool in @tools %>
-	<%= tool.title %>
-<% end %>
+<script>
+  (function() {
+    var cx = '008297227787996518107:iqfk8czcuvu';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<style type="text/css">
+	.gsc-control-cse{
+		background:transparent !important;
+		border:0 !important;
+	}
+	.gsc-webResult, .gsc-result{
+		background:transparent !important;
+		border:0 !important;
+	}
+	.gsc-url-top{
+		display: none !important;
+	}
+/*	.gs-title a{
+		display: block !important;
+		margin:0 0 15px !important;
+		font-size: 1.25em !important;
+		color:#08C !important;
+		text-decoration: none !important;
+	}
+	.gsc-table-cell-snippet-close{
+		width:500px !important;
+		font-size: 1.15em !important;
+		float:left !important;
+		text-align: left !important;
+	}*/
+</style>
+<div class="home-wrap">
+<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only>
+</div>
