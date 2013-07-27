@@ -1,6 +1,6 @@
 <div class="nav-wrap">
 	<ul class="nav main-nav">
-		<li><a href="/"><strong>webkit.io</strong></a></li>
+		<li class="logo"><a href="/"><h1>devkit</h1><span class="logo-tag">Tools &amp; Resources <br /> for Developers</span></a></li>
 		<li><%= link_to "Tools", tools_path %>
 			<ul class="main-nav-dropdown">
 				<% for tool in @tools %>
@@ -8,7 +8,7 @@
 				<% end %>
 			</ul>
 		</li>
-		<li><%= link_to "Code", categories_path %>
+		<li><%= link_to "Code", code_path %>
 			<ul class="main-nav-dropdown">
 				<% for category in @categories %>
 					<li><%= link_to category.name, category_path(category) %></li>

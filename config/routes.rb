@@ -15,11 +15,9 @@ end
   #   resources :codes, :controller => "categories/codes"
 
   # end
-    get "/categories/" => "categories#index"
-    get "/categories/edit" => "categories#edit"
-    get "/categories/new" => "categories#new"
+    get "/code/" => "categories#index"
 
-    resources :categories, :path => "/" do
+    resources :categories, :path => "/code/" do
         resources :codes, :path => "/", :controller => "categories/codes"
     end
 
