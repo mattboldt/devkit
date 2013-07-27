@@ -59,6 +59,10 @@
 		display: block;
 		margin-bottom:15px;
 	}
+	::selection{
+		background:#adccf9;
+		// color:#fff;
+	}
 }
 
 

@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
 	def index
-		@categories = Category.all
+		@categories = Category.find(:all, :include => :codes)
 	end
 	def show
 		@category = Category.find_by_url(params[:id])

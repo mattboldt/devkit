@@ -1,7 +1,3 @@
-body{
-	background:#f0f0f0;
-}
-
 .wrap{
 	margin:20px auto;
 }
@@ -12,11 +8,21 @@ body{
 }
 
 .code--block{
+	display: inline-block;
+	vertical-align: top;
 	margin:0 auto 40px;
 	border-radius:5px;
 	box-shadow:rgba(0,0,0,0.2) 0px 1px 3px;
 	overflow: hidden;
 }
+	.full-page{
+		max-width:550px;
+		margin-right:20px;
+	}
+	.center-page{
+		width:600px;
+		margin-right:20px;
+	}
 	.code--title{
 		padding:15px;
 		font-size: 1.5em;

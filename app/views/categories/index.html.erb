@@ -1,3 +1,21 @@
+<%= render "shared/category_nav" %>
+
+
+<div class="wrap">
+	<h1 class="code-header">All Code</h1>
 <% for category in @categories %>
-	<%= category.name %>
+	<% for code in category.codes %>
+		<div class="code--block full-page">
+			<div class="code--title">
+				<%= code.name %>
+			</div>
+			<div class="code--body">
+				<%= code.body.html_safe %>
+			</div>
+			<div class="code--foot">
+				<%= link_to "View", [category, code]%>
+			</div>
+		</div>
+	<% end %>
 <% end %>
+</div>

@@ -4,6 +4,10 @@ body {
 .narrow {
   max-width: 700px; }
 
+.meta-tag-body-wrap {
+  margin: 0 auto;
+  max-width: 1100px; }
+
 .ugh {
   clear: both; }
 
@@ -206,6 +210,8 @@ input[type=checkbox] {
   .output pre {
     display: block;
     margin-bottom: 15px; }
+  .output ::selection {
+    background: #adccf9; }
 
 .complete {
   max-width: 700px;

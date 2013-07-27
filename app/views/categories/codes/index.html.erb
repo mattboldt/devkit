@@ -1,15 +1,15 @@
 
-<%= render "category_nav" %>
+<%= render "shared/category_nav" %>
 <script>
 $(function(){
 	$(".category--<%= @category.url %>").addClass("category--active");
 });
 </script>
 
-<div class="home-wrap">
+<div class="wrap">
 	<h1 class="code-header">All in <%= @category.name %></h1>
 	<% for code in @codes do %>
-		<div class="code--block">
+		<div class="code--block center-page">
 			<div class="code--title">
 				<%= code.name %>
 			</div>
