@@ -1,10 +1,12 @@
+// Nav bar
 .nav-wrap{
 	position: relative;
 	margin:0;
 	padding:0;
 	width:100%;
-	@include linear-gradient(top, #f8f8f8, #eaeaea);
-	box-shadow:inset rgba(0,0,0,0.1) 0px -1px 0px, inset rgba(255,255,255,0.5) 0px 1px 0px, rgba(0,0,0,0.3) 0px 0px 5px;
+	@include linear-gradient(top, #f6f6f8, #e5e5e7);
+	box-shadow:inset rgba(255,255,255,0.5) 0px -1px 0px, inset rgba(255,255,255,0.5) 0px 1px 0px, rgba(0,0,0,0.3) 0px 0px 5px;
+	border-bottom:#999 1px solid;
 	overflow: visible;
 	&:after{
 		content: "";
@@ -15,7 +17,6 @@
 
 .main-nav{
 	display: block;
-	padding:0 10px;
 	float: left;
 	margin:0 auto;
 	li{
@@ -25,6 +26,9 @@
 		overflow: visible;
 		ul{
 			z-index:9999;
+			a{
+				box-shadow:none;
+			}
 		}
 		&:hover ul{
 			left:0px;
@@ -32,20 +36,51 @@
 	}
 	a{
 		display: block;
-		padding:20px 20px;
+		margin:0;
+		padding:22px 20px;
 		color:#333;
 		box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, rgba(255,255,255,0.7) 1px 0px 0px;
 		overflow: visible;
+		&:hover{
+			box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, rgba(255,255,255,0.7) 1px 0px 0px, inset rgba(255,255,255,1) 0px 0px 20px;
+		}
+		&:active{
+			box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, inset rgba(0,0,0,0.2) 0px 0px 5px;
+		}
 	}
+}
+
+.logo{
+	a{
+		padding:15px 20px;
+		// background-image: -webkit-linear-gradient(-85deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.5) 100%);
+	}
+	h1{
+		display: inline-block;
+		margin:0 0.5em 0 0;
+		padding:0;
+		vertical-align: middle;
+	}
+	font-size: 0.9em;
+}
+
+.logo-tag{
+	display: inline-block;
+	padding:3px 0 0 0;
+	font-size: 0.8em;
+	font-weight: 400;
+	color:#999;
+	overflow: hidden;
+	vertical-align: middle;
 }
 
 .nav-search{
 	display: block;
 	float:left;
-	margin:5px 10px;
+	margin:10px 10px;
 	padding:10px;
 	width:100px;
-	height:25px;
+	height:20px;
 	border-radius:5px;
 	border:#e0e0e0 1px solid;
 	outline:none;
@@ -64,7 +99,7 @@
 	background:#FFF;
 	position: absolute;
 	left:-9999999px;
-	top:58px;
+	top:62px;
 	box-shadow:rgba(0,0,0,0.2) 0px 2px 5px;
 	border-bottom-left-radius:5px;
 	border-bottom-right-radius:5px;
