@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Webkit::Application.load_tasks
+Devkit::Application.load_tasks

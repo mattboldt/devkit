@@ -1,56 +1,52 @@
-<!-- <section class="header">
+<section class="header">
 	<div class="wrap">
 		<h1 class="headline">devkit.io</h1>
 		<h2 class="tagline">tools &amp; resources for web developers</h2>
 	</div>
-</section> -->
+</section>
 
 
 <section class="body">
 	<div class="home-wrap">
-	
-	<div class="home-hero-text">
-		<h2 class="h2"><strong>Stop wasting time</strong> searching <br /> for developer tools &amp; resources.</h2>
-		<hr />
-		<p>Search for some code, a particular tool, or just the subject of what you're working on.
-		<br />I promise you'll find something usefull.</p>
-	</div>
-	<form action="/search/" method="get">
-		<div class="home-search-wrap">
-			<input class="home-search" name="q" type="text" />
-			<input type="submit" class="home-submit" value="Q"/>
-		</div>
-	</form>
-	<ul class="examples">
-		<li>Some Examples:</li>
-		<li><a href="/search/?q=sass+linear+gradients">Sass Gradients</a></li>
-		<li><a href="/search/?q=jquery+retina+images">jQuery Retina Images</a></li>
-		<li><a href="/search/?q=html+meta+tags">HTML Meta Tags</a></li>
-	</ul>
-	<div class="home-hero-text">
-		<span class="h1">Browse All</span>
-		<hr />
-		<p>New code snippets, tools, and much more is being added regularly. Check out the categories.</p>
-	</div>
-	<ul class="home-categories">
-	<% for tool in @tools %>
-		<li><%= link_to tool.title, tool_path(tool) %></li>
-	<% end %>
-	<% for category in @categories %>
-		<li><%= link_to category.name, category_path(category) %></li>
-	<% end %>
-	</ul>
 
-<!-- 		<% for tool in @tools %>
-			<div class="block">
-				<h3 class="h3"><%= tool.title %></h3>
-				<p><%= tool.desc %></p>
-				<div class="btn btn-small">
-					<%= link_to "View", tool %>
+		<div class="home-hero-text">
+			<h2 class="h2">Top Tools</h2>
+			<ul class="top-tools">
+				<li><a href="/tools/meta-tag-generator/">Meta Tag Generator</a>
+					<p>The only meta tag generator you'll ever need. A must have for any website build.</p>
+				</li>
+			</ul>
+			<hr />
+			<h2 class="h2">Search</h2>
+			<p>Search for some code, a particular tool, or just the subject of what you're working on.
+			<br />I promise you'll find something useful.</p>
+		</div>
+			<form action="/search/" method="get">
+				<div class="home-search-wrap">
+					<input class="home-search" name="q" type="text" />
+					<input type="submit" class="home-submit" value="Q"/>
 				</div>
-			</div>
+			</form>
+			<ul class="examples">
+				<li>Some Examples:</li>
+				<li><a href="/search/?q=sass+linear+gradients">Sass Gradients</a></li>
+				<li><a href="/search/?q=jquery+retina+images">jQuery Retina Images</a></li>
+				<li><a href="/search/?q=html+meta+tags">HTML Meta Tags</a></li>
+			</ul>
+		<hr />
+
+		<div class="home-hero-text">
+			<h2 class="h2">Browse All</h2>
+			<p>New code snippets, tools, and much more is being added regularly. Check out the categories.</p>
+		</div>
+		<ul class="home-categories">
+		<% for tool in @tools %>
+			<li><%= link_to tool.title, tool_path(tool) %></li>
 		<% end %>
- -->
+		<% for category in @categories %>
+			<li><%= link_to category.name, category_path(category) %></li>
+		<% end %>
+		</ul>
 
 	</div>
 
