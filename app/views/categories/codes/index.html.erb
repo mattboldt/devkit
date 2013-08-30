@@ -1,24 +1,30 @@
 
-<%= render "shared/category_nav" %>
+<div class="wrap">
+	<%= render "shared/category_nav" %>
+		<h1 class="code-header">All in <%= @category.name %></h1>
+
+		<% if @codes.exists? %>
+			<% for code in @codes do %>
+				<div class="code--block center-page">
+					<div class="code--title">
+						<%= link_to code.name, [@category, code] %>
+					</div>
+					<div class="code--body">
+						<%= code.preview.html_safe %>
+					</div>
+					<div class="code--foot">
+						<%= link_to "View", [@category, code]%>
+					</div>
+				</div>
+			<% end %>
+		<% else %>
+			<p>There doesn't seem to be anything here... <em>yet.</em></p>
+			<p>Want to contribute some code? email: ( me [at] mattboldt [dot] com )</p>
+		<% end %>
+</div>
+
 <script>
 $(function(){
 	$(".category--<%= @category.url %>").addClass("category--active");
 });
 </script>
-
-<div class="wrap">
-	<h1 class="code-header">All in <%= @category.name %></h1>
-	<% for code in @codes do %>
-		<div class="code--block center-page">
-			<div class="code--title">
-				<%= code.name %>
-			</div>
-			<div class="code--body">
-				<%= code.body.html_safe %>
-			</div>
-			<div class="code--foot">
-				<%= link_to "View", [@category, code]%>
-			</div>
-		</div>
-	<% end %>
-</div>

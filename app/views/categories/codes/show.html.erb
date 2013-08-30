@@ -1,13 +1,23 @@
 
-<%= render "shared/category_nav" %>
 
 <div class="wrap">
-	<div class="code--block">
-		<div class="code--title">
-			<%= @code.name %>
-		</div>
-		<div class="code--body">
-			<%= @code.body.html_safe %>
+	<%= render "shared/category_nav" %>
+	<div class="container">
+		<div class="code--block">
+			<div class="code--title">
+				<%= @code.name %>
+			</div>
+			<div class="code--body">
+				<%= @code.body.html_safe %>
+			</div>
 		</div>
 	</div>
 </div>
+
+
+
+<script>
+$(function(){
+	$(".category--<%= @category.url %>").addClass("category--active");
+});
+</script>

@@ -16,9 +16,9 @@ $(function(){
 	});
 
 	$(".output-outer").draggable({
-			handle: ".output-head",
-			containment: "body"
-		});
+		handle: ".output-head",
+		containment: "body"
+	});
 
 	setInterval(function(){
 
@@ -30,7 +30,6 @@ $(function(){
 
 		// iterate over results
 		$.each(data, function(i, obj) {
-			// HTML5 magic!!
 			localStorage.setItem(obj.name, obj.value);
 		});
 
@@ -61,6 +60,7 @@ $(function(){
 	var $output   = $(".output-outer"),
         $window    = $(window),
         offset     = $("#body").offset(),
+        formBlock = $(".form-wrap").offset(),
         topPadding = 15;
 
 
@@ -72,7 +72,8 @@ $(function(){
 			                top: "40px"
 			            })
 			            .css("position", "fixed");
-		        } else {
+		        }
+		        else {
 		            $output
 			            .stop().animate({
 			                top: "0px"
