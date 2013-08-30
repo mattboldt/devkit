@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 		@categories = Category.find(:all, :include => :codes)
 	end
 	def show
-		@category = Category.find_by_url(params[:id])
+		@category = Category.find(params[:id])
 		@codes = @category.codes
 	end
 	def new

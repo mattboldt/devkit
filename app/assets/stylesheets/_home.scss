@@ -19,9 +19,37 @@
 		font-size: 2.5em;
 		font-weight: 400;
 	}
-	text-align: center;
+	// text-align: center;
 	p{
 		color:#333;
+	}
+}
+
+.top-tools{
+	list-style: none;
+	padding:0;
+	li{
+		display: block;
+	}
+	a{
+		display: inline-block;
+		padding:10px 10px;
+		@include linear-gradient(top, #fff, #f0f0f0);
+		font-size: 1.5em;
+		color:#444;
+		text-shadow:rgba(255,255,255,0.9) 0px 1px 0px;
+		border:#CCC 1px solid;
+		border-radius:4px;
+		box-shadow:inset rgba(255,255,255,0.8) 0px -1px 0px, rgba(0,0,0,0.1) 0px 1px 3px;
+		&:hover{
+			box-shadow:inset rgba(255,255,255,1) 0px 0px 20px, rgba(0,0,0,0.3) 0px 1px 5px;
+		}
+		&:active{
+			box-shadow:inset rgba(0,0,0,0.1) 0px 1px 5px;
+		}
+	}
+	p{
+		display: inline-block;
 	}
 }
 
@@ -78,7 +106,6 @@
 	list-style: none;
 	margin:0;
 	padding:0;
-	text-align: center;
 	li{
 		display: inline-block;
 	}

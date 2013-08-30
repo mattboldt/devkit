@@ -3,13 +3,13 @@
 	<div class="home-wrap">
 		<h1>All Tools</h1>
 		<% for tool in @tools %>
-			<div class="block">
+
 				<h3 class="h3"><%= tool.title %></h3>
 				<p><%= tool.desc %></p>
 				<div class="btn btn-small">
 					<%= link_to "View", tool %>
 				</div>
-			</div>
+
 		<% end %>
 	</div>
 
