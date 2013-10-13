@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
 	def show
 		@category = Category.find(params[:id])
 		@codes = @category.codes
+		@code.preview = @code.preview.html_safe
 	end
 	def new
 		@category = Category.new
