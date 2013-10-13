@@ -10,7 +10,7 @@
 						<%= link_to code.name, [@category, code] %>
 					</div>
 					<div class="code--body">
-						<%= code.preview.html_safe %>
+						<%= sanitize code.preview %>
 					</div>
 					<div class="code--foot">
 						<%= link_to "View", [@category, code]%>
