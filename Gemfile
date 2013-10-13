@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
-gem 'rails', git: 'https://github.com/rails/rails.git', branch: '4-0-stable'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -35,7 +35,7 @@ gem 'devise',              github: 'plataformatec/devise'
 gem 'responders',          github: 'plataformatec/responders'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'ransack'
-gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 
 gem 'protected_attributes'
