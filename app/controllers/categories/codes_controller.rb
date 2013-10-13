@@ -6,8 +6,6 @@ class Categories::CodesController < ApplicationController
 	def show
 		@category = Category.find_by_url(params[:category_id])
 		@code = @category.codes.find_by_url(params[:id])
-		@code.preview = @code.preview.html_safe
-		@code.body = @code.body.html_safe
 	end
 	# def new
 	# 	@category = Category.find_by_url(params[:category_id])
