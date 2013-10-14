@@ -19,7 +19,11 @@ ActiveAdmin.register_page "Dashboard" do
         end
         strong { link_to "View All Tools", admin_dev_tools_path }
       end
-
+  controller do
+    def permitted_params
+      params.permit!
+    end
+  end
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do
