@@ -1,6 +1,0 @@
-
-<ul class="nav category-nav">
-	<% for category in @categories %>
-		<li class="category--<%= category.url %>"><%= link_to category.name, category_path(category) %></li>
-	<% end %>
-</ul>
