@@ -1,0 +1,31 @@
+
+<div class="wrap">
+	<%= render "shared/category_nav" %>
+		<h1 class="code-header"></h1>
+
+		<% if @codes %>
+			<% for code in @codes do %>
+				<div class="code--block center-page">
+					<div class="code--title">
+						<%= link_to code.name, code %>
+					</div>
+					<div class="code--body">
+					<p>Tags: <%= sanitize code.tag_list.map { |t| link_to t, code_tag_path(t) }.join(", ") %></p>
+						<%= sanitize code.preview %>
+					</div>
+					<div class="code--foot">
+						<%= link_to "View", code %>
+					</div>
+				</div>
+			<% end %>
+		<% else %>
+			<p>There doesn't seem to be anything here... <em>yet.</em></p>
+			<p>Want to contribute some code? email: ( me [at] mattboldt [dot] com )</p>
+		<% end %>
+</div>
+
+<script>
+$(function(){
+
+});
+</script>

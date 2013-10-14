@@ -1,6 +1,10 @@
 class ToolsController < ApplicationController
 	def index
-		@tools = Tool.all
+		if params[:tag]
+			@tools = Tool.tagged_with(params[:tag])
+		else
+			@tools = Tool.all
+		end
 	end
 	def show
 		@tool = Tool.find_by_url(params[:id])

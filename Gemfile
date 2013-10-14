@@ -38,7 +38,9 @@ gem 'ransack'
 gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 
-gem 'protected_attributes'
+gem 'acts-as-taggable-on'
+
+# gem 'protected_attributes'
 gem 'rails-observers'
 # gem 'actionpack-page_caching'
 # gem 'actionpack-action_caching'

@@ -6,7 +6,7 @@ Devkit::Application.routes.draw do
 
   root :to => "home#index"
 
-
+get "/tools/tags/:tag", to: "tools#index", as: :tool_tag
 resources :tools do
   resources :docs, :controller => "tools/docs"
 end
@@ -15,11 +15,8 @@ end
   #   resources :codes, :controller => "categories/codes"
 
   # end
-    get "/code/" => "categories#index"
-
-    resources :categories, :path => "/code/" do
-        resources :codes, :path => "/", :controller => "categories/codes"
-    end
+get "/code/tags/:tag", to: "codes#index", as: :code_tag
+resources :codes , :path => "/code/"
 
 
   # The priority is based upon order of creation:

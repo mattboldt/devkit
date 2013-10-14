@@ -1,7 +1,8 @@
 class Tool < ActiveRecord::Base
-	attr_accessible :body, :head, :title, :url, :desc, :category_id
+	# attr_accessible :body, :head, :title, :url, :desc, :category_id
 	validates_uniqueness_of :url
 	has_many :docs
+	acts_as_taggable
 	def to_param
 		url
 	end
@@ -17,4 +18,3 @@ class Tool < ActiveRecord::Base
 	# acts_as_taggable
 	# acts_as_taggable_on :tags
 end
-ActiveAdmin.register Tool, :as => "Dev Tools"
