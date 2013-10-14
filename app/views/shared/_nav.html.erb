@@ -8,13 +8,6 @@
 				<% end %>
 			</ul>
 		</li>
-		<li><%= link_to "Code", code_path %>
-			<ul class="main-nav-dropdown">
-				<% for category in @categories %>
-					<li><%= link_to category.name, category_path(category) %></li>
-				<% end %>
-			</ul>
-		</li>
 	</ul>
 	<form action="/search/" method="get">
 		<input class="nav-search" type="search" name="q" placeholder="Search..."/>

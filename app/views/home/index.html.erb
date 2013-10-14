@@ -43,9 +43,7 @@
 		<% for tool in @tools %>
 			<li><%= link_to tool.title, tool_path(tool) %></li>
 		<% end %>
-		<% for category in @categories %>
-			<li><%= link_to category.name, category_path(category) %></li>
-		<% end %>
+
 		</ul>
 
 	</div>
