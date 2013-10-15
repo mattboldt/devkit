@@ -7,7 +7,8 @@ class CodesController < ApplicationController
 		end
 	end
 	def show
-		@code = Code.find_by_url(params[:id])
+		@code = Code.find(params[:id])
+		redirect_to_good_slug(@code) and return if bad_slug?(@code)
 	end
 	# def new
 	# 	@category = Category.find_by_url(params[:category_id])
