@@ -7,7 +7,7 @@
 					<h3 class="h3"><%= tool.title %></h3>
 					<p><%= tool.desc %></p>
 					<div class="btn btn-small">
-						<%= link_to "View", tool %>
+						<%= link_to "View", tool_path(tool) %>
 					</div>
 					<p>Tags: <%= sanitize tool.tag_list.map { |t| link_to t, tool_tag_path(t) }.join(", ") %></p>
 			<% end %>

@@ -2,12 +2,13 @@ Devkit::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   get "/search" => "search#index"
 
   root :to => "home#index"
 
 get "/tools/tags/:tag", to: "tools#index", as: :tool_tag
-resources :tools do
+resources :tools, :controller => "dev_tools" do
   resources :docs, :controller => "tools/docs"
 end
 

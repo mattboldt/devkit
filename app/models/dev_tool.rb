@@ -1,4 +1,4 @@
-class Tool < ActiveRecord::Base
+class DevTool < ActiveRecord::Base
 	# attr_accessible :body, :head, :title, :url, :desc, :category_id
 	validates_uniqueness_of :url
 	has_many :docs

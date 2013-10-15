@@ -11,7 +11,7 @@ ActiveAdmin.register_page "Dashboard" do
     end
 
     section "Recent Tools" do
-        table_for Tool.order("created_at").limit(5) do
+        table_for DevTool.order("created_at").limit(5) do
           column :title do |tool|
             link_to tool.title, admin_dev_tool_path(tool)
           end

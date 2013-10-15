@@ -1,6 +1,6 @@
 class Doc < ActiveRecord::Base
 	# attr_accessible :title, :body, :url, :tool_id
-	belongs_to :tool
+	belongs_to :dev_tool
 	validates_uniqueness_of :url
 	def to_param
 		url
