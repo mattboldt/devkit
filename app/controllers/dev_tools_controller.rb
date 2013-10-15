@@ -1,13 +1,13 @@
-class ToolsController < ApplicationController
+class DevToolsController < ApplicationController
 	def index
 		if params[:tag]
-			@tools = Tool.tagged_with(params[:tag])
+			@tools = DevTool.tagged_with(params[:tag])
 		else
-			@tools = Tool.all
+			@tools = DevTool.all
 		end
 	end
 	def show
-		@tool = Tool.find(params[:id])
+		@tool = DevTool.find(params[:id])
 		redirect_to_good_slug(@tool) and return if bad_slug?(@tool)
 		@tool.head = @tool.head.html_safe
 		@tool.body = @tool.body.html_safe

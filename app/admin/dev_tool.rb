@@ -1,6 +1,7 @@
-ActiveAdmin.register Tool, :as => "Dev Tools" do
+ActiveAdmin.register DevTool do
     before_filter :only => [:show, :edit, :update, :destroy] do
-        @dev_tools = Tool.find_by_url(params[:id])
+        @tool = DevTool.find(params[:id])
+        redirect_to_good_slug(@tool) and return if bad_slug?(@tool)
       end
 
 	  index do
@@ -28,4 +29,5 @@ ActiveAdmin.register Tool, :as => "Dev Tools" do
       params.permit!
     end
   end
+
 end
