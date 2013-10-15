@@ -7,14 +7,14 @@
 			<% for code in @codes do %>
 				<div class="code--block center-page">
 					<div class="code--title">
-						<%= link_to code.name, code %>
+						<%= link_to code.name, code_path(code) %>
 					</div>
 					<div class="code--body">
 					<p>Tags: <%= sanitize code.tag_list.map { |t| link_to t, code_tag_path(t) }.join(", ") %></p>
 						<%= sanitize code.preview %>
 					</div>
 					<div class="code--foot">
-						<%= link_to "View", code %>
+						<%= link_to "View", code_path(code) %>
 					</div>
 				</div>
 			<% end %>
