@@ -1,11 +1,11 @@
 ActiveAdmin.register Code do
 	before_filter :only => [:show, :edit, :update, :destroy] do
-        @code = Code.find_by_url(params[:id])
+        @code = Code.find(params[:id])
       end
       index do
 	    column :name
 	    column "Release Date", :created_at
-	    column :url
+	    column :slug
 	    column :tag_list
 	    default_actions
 	  end
@@ -13,7 +13,7 @@ ActiveAdmin.register Code do
 	  	attributes_table do
 	  	row :name
 	    # row "Release Date", :created_at
-	    row :url
+	    row :slug
 	    row :tag_list
 	    row :body
 		end
@@ -21,7 +21,7 @@ ActiveAdmin.register Code do
 	form do |f|
 		f.inputs "Details", :multipart => true do
 			f.input :name
-			f.input :url
+			f.input :slug
 			f.input :preview
 			f.input :body
 			f.input :tag_list

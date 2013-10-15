@@ -7,7 +7,8 @@ class ToolsController < ApplicationController
 		end
 	end
 	def show
-		@tool = Tool.find_by_url(params[:id])
+		@tool = Tool.find(params[:id])
+		redirect_to_good_slug(@tool) and return if bad_slug?(@tool)
 		@tool.head = @tool.head.html_safe
 		@tool.body = @tool.body.html_safe
 	end

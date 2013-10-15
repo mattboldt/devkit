@@ -3,9 +3,10 @@ class Tool < ActiveRecord::Base
 	validates_uniqueness_of :url
 	has_many :docs
 	acts_as_taggable
-	def to_param
-		url
-	end
+
+	# custom slug method defined in lib/app_utilities.rb
+	# initialized in config/initializers/active_record_extensions.rb
+	custom_slugs_with(:url)
 	def before_save
 		url = url.downcase
 	end
