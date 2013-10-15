@@ -1,6 +1,7 @@
 ActiveAdmin.register Code do
 	before_filter :only => [:show, :edit, :update, :destroy] do
         @code = Code.find(params[:id])
+		redirect_to_good_slug(@code) and return if bad_slug?(@code)
       end
       index do
 	    column :name
