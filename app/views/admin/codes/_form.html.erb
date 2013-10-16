@@ -1,0 +1,15 @@
+  <%= semantic_form_for [:admin, @code] do |f| %>
+    <%= f.inputs :name %>
+    <%= f.inputs :slug %>
+    <p>Use the following code structure for snippets:</p>
+<textarea readonly rows="5">
+<pre>
+  <code class="language-css">
+  </code>
+</pre>
+</textarea>
+    <%= f.inputs :preview %>
+    <%= f.inputs :body %>
+    <%= f.inputs :tag_list %>
+    <%= f.actions :submit %>
+  <% end %>
