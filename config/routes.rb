@@ -7,7 +7,7 @@ Devkit::Application.routes.draw do
 
   root :to => "home#index"
 
-get "/tools/tags/:tag", to: "tools#index", as: :tool_tag
+get "/tools/tags/:tag", to: "dev_tools#index", as: :tool_tag
 resources :tools, :controller => "dev_tools" do
   resources :docs, :controller => "tools/docs"
 end

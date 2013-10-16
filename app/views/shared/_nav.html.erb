@@ -8,6 +8,13 @@
 				<% end %>
 			</ul>
 		</li>
+		<li><%= link_to "Code", codes_path %>
+			<ul class="main-nav-dropdown">
+				<% tag_cloud Code.tag_counts, %w{s m l} do |tag| %>
+					<li><%= link_to tag.name, code_tag_path(tag.name) %></li>
+				<% end %>
+			</ul>
+		</li>
 	</ul>
 	<form action="/search/" method="get">
 		<input class="nav-search" type="search" name="q" placeholder="Search..."/>
