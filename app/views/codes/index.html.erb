@@ -1,5 +1,13 @@
 
 <div class="wrap">
+
+	<div class="tag-cloud">
+		<% tag_cloud Code.tag_counts, %w{s m l} do |tag| %>
+			<%= link_to tag.name, code_tag_path(tag.name) %>
+		<% end %>
+	</div>
+
+
 	<%= render "shared/category_nav" %>
 		<h1 class="code-header"></h1>
 
