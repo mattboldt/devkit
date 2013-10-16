@@ -17,6 +17,7 @@ end
 
   # end
 get "/code/tags/:tag", to: "codes#index", as: :code_tag
+get '/code/tags', to: redirect('/code/')
 resources :codes , :path => "/code/"
 
 
