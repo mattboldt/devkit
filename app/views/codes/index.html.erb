@@ -4,7 +4,7 @@
 	<div class="tag-cloud">
 		<ul>
 		<% tag_cloud Code.tag_counts, %w{s m l} do |tag| %>
-			<li><%= link_to tag.name.gsub("-", " ").capitalize, code_tag_path(tag.name) %></li>
+			<li><%= link_to tag.name.gsub("-", " ").upcase, code_tag_path(tag.name) %></li>
 		<% end %>
 		</ul>
 	</div>
