@@ -18,4 +18,17 @@ before_filter :get_global_vars
 				:status => :moved_permanently
 			})
 	end
+	# unless Rails.application.config.consider_all_requests_local
+		rescue_from ActiveRecord::RecordNotFound,
+		ActionController::RoutingError,
+		ActionController::UnknownController do |exception|
+		# ActionController::UnknownAction,
+		# ActionController::MethodNotAllowed
+
+		# Put loggers here, if desired.
+
+			# redirect_to four_oh_four_path
+			render :file => 'public/404.html', :status => :not_found
+		end
+	# end
 end
