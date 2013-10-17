@@ -57,6 +57,7 @@ module Devkit
     # Enable the asset pipeline
     # config.assets.enabled = true
     config.action_controller.default_url_options = { :trailing_slash => true }
+    config.assets.paths << "#{Rails.root}/app/assets/plugins"
 
     config.assets.initialize_on_precompile = false
 

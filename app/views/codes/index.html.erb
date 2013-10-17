@@ -20,11 +20,12 @@
 						<%= link_to code.name, code_path(code) %>
 					</div>
 					<div class="code--body">
-					<p>Tags: <%= sanitize code.tag_list.map { |t| link_to t, code_tag_path(t) }.join(", ") %></p>
-						<%= sanitize code.preview %>
+						<%= raw code.preview %>
 					</div>
 					<div class="code--foot">
-						<%= link_to "View", code_path(code) %>
+						<p><%= link_to "Raw", code_raw_path(code) %>
+						<%= link_to "Download", download_code_path(code) %></p>
+						<p>Tags: <%= sanitize code.tag_list.map { |t| link_to t, code_tag_path(t) }.join(" ") %></p>
 					</div>
 				</div>
 			<% end %>
