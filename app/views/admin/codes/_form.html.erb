@@ -1,15 +1,29 @@
+  <script>
+  // $(function(){
+  //   if ($("#code_raw").val() === ""){
+  //   $("#code_body").on("keyup", function(){
+  //       $("#code_raw").val($(this).val());
+  //   });
+  //   }
+  // });
+
+  </script>
+
+
   <%= semantic_form_for [:admin, @code] do |f| %>
     <%= f.inputs :name %>
     <%= f.inputs :slug %>
     <p>Use the following code structure for snippets:</p>
 <textarea readonly rows="5">
-<pre>
+<pre class="line-numbers">
   <code class="language-css">
   </code>
 </pre>
 </textarea>
     <%= f.inputs :preview %>
-    <%= f.inputs :body %>
+    <%= f.inputs :body, :id => "body-content" %>
+    <%= f.inputs :raw, :id => "raw-content" %>
+    <%= f.inputs :filetype %>
     <%= f.inputs :tag_list %>
     <%= f.actions :submit %>
   <% end %>

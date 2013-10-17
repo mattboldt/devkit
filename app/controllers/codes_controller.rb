@@ -10,6 +10,14 @@ class CodesController < ApplicationController
 		@code = Code.find(params[:id])
 		redirect_to_good_slug(@code) and return if bad_slug?(@code)
 	end
+	def download
+		@code = Code.find(params[:id])
+		# Rails.logger.info params.inspect
+		@content = @code.raw
+		send_data @content,
+		  :type => 'text',
+		  :disposition => "attachment; filename=code-#{@code.created_at.to_formatted_s(:db)}.#{@code.filetype}"
+	end
 	# def new
 	# 	@category = Category.find_by_url(params[:category_id])
 	# 	@codes = @category.codes.build
