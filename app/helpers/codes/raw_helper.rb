@@ -1,0 +1,2 @@
+module Codes::RawHelper
+end

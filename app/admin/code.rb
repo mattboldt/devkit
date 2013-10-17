@@ -3,23 +3,12 @@ ActiveAdmin.register Code do
         @code = Code.find(params[:id])
 		redirect_to_good_slug(@code) and return if bad_slug?(@code)
       end
-   #    index do
-	  #   column :name
-	  #   column "Release Date", :created_at
-	  #   column :slug
-	  #   column :tag_list
-	  #   default_actions
-	  # end
-	index :partial => "index"
-	  show do
-	  	attributes_table do
-	  	row :name
-	    # row "Release Date", :created_at
-	    row :slug
-	    row :tag_list
-	    row :body
-		end
-	end
+      index do
+	    column :name
+	    column "Release Date", :created_at
+	    column :tag_list
+	    default_actions
+	  end
 	# form do |f|
 	# 	f.inputs "Details", :multipart => true do
 	# 		f.input :name

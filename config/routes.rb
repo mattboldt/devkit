@@ -18,7 +18,12 @@ end
   # end
 get "/code/tags/:tag", to: "codes#index", as: :code_tag
 get '/code/tags', to: redirect('/code/')
-resources :codes , :path => "/code/"
+resources :codes , :path => "/code/" do
+    get "/raw/", :to => "codes/raw#show"
+        member do
+        get :download
+      end
+end
 
 
   # The priority is based upon order of creation:
