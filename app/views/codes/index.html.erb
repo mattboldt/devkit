@@ -1,6 +1,6 @@
 <div class="wrap">
 
-	<div class="tag-cloud">
+<!-- 	<div class="tag-cloud">
 		<ul>
 		<% tag_cloud Code.tag_counts, %w{s m l} do |tag| %>
 			<% if params[:tag] %>
@@ -10,6 +10,37 @@
 				</li>
 			<% else %>
 				<li><%= link_to tag.name.gsub("-", " ").upcase, code_tag_path(tag.name) %></li>
+			<% end %>
+		<% end %>
+		</ul>
+	</div> -->
+	<div class="tag-cloud">
+		<ul>
+		<% if params[:tag] %>
+			<% @tags.each do |tag| %>
+				<li>
+					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
+					<%= link_to "+", code_tag_path(params[:tag]) + "/" + tag %>
+				</li>
+			<% end %>
+			<% @params.each do |tag| %>
+				<li>
+					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
+				</li>
+<!-- 				<% if @params.length > 1 %>
+					<li>
+						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
+						<%= link_to "-", code_tag_path(params[:tag].gsub(tag+"/", "")) %>
+					</li>
+				<% else %>
+					<li>
+						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
+					</li>
+				<% end %> -->
+			<% end %>
+		<% else %>
+			<% @tags.each do |tag| %>
+				<li><%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %></li>
 			<% end %>
 		<% end %>
 		</ul>
