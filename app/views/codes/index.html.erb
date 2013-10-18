@@ -16,7 +16,7 @@
 	</div> -->
 	<div class="tag-cloud">
 		<ul>
-		<% if params[:tag] %>
+		<% if params[:tag] && @codes.any? %>
 			<% @tags.each do |tag| %>
 				<li>
 					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
@@ -38,10 +38,23 @@
 					</li>
 				<% end %> -->
 			<% end %>
+		<% elsif params[:tag] && @codes.empty? %>
+			<% @tags.each do |tag| %>
+				<li><%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %></li>
+			<% end %>
+			<% @params.each do |tag| %>
+				<li>
+					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
+					<%= link_to "-", code_tag_path(params[:tag].gsub(tag+"/", "")) %>
+				</li>
+			<% end %>
+
+			<h1>Nothing here</h1>
 		<% else %>
 			<% @tags.each do |tag| %>
 				<li><%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %></li>
 			<% end %>
+
 		<% end %>
 		</ul>
 	</div>
