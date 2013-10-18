@@ -1,7 +1,12 @@
 class CodesController < ApplicationController
 	def index
 		if params[:tag]
-			@codes = Code.tagged_with(params[:tag])
+			sorted_tags = params[:tag].split("+").sort_by!{ |m| m.downcase }.uniq.join("+")
+			if params[:tag] != sorted_tags
+				redirect_to code_tags_path+sorted_tags, status: 301
+			else
+				@codes = Code.tagged_with(params[:tag].split("+"))
+			end
 		else
 			@codes = Code.all
 		end
