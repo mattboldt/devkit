@@ -11,7 +11,7 @@ class CodesController < ApplicationController
 			@params = params[:tag].split("/")
 			@tags = @tags-@params
 		else
-			@codes = Code.all
+			@codes = Code.find(:all, :order => "updated_at DESC")
 		end
 	end
 	def show
