@@ -1,3 +1,9 @@
+
+<% content_for :head do %>
+
+<% end %>
+
+
 <div class="wrap">
 
 <!-- 	<div class="tag-cloud">
@@ -17,6 +23,7 @@
 	<div class="tag-cloud">
 		<ul>
 		<% if params[:tag] && @codes.any? %>
+			<% title @tags.join(", ").capitalize + " | Code Snippet Tags | Devkit" %>
 			<% @tags.each do |tag| %>
 				<li>
 					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
@@ -45,7 +52,7 @@
 			<% @params.each do |tag| %>
 				<li>
 					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
-					<%= link_to "-", code_tag_path(params[:tag].gsub(tag+"/", "")) %>
+					<%= link_to "-", code_tag_path(params[:tag].gsub(tag, "")).gsub("//", "/") %>
 				</li>
 			<% end %>
 
