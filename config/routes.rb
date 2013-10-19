@@ -12,7 +12,7 @@ resources :tools, :controller => "dev_tools" do
   resources :docs, :controller => "tools/docs"
 end
 
-get "/code/tags/*tag", to: "codes#index", as: :code_tag, :trailing_slash => false
+get "/code/tags/*tag", to: "codes/tags#index", as: :code_tag, :trailing_slash => false
 get '/code/tags', to: redirect('/code/')
 resources :codes , :path => "/code/" do
     get "/raw/", :to => "codes/raw#show"
