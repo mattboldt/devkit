@@ -1,37 +1,37 @@
-<div class="tag-cloud">
-	<ul>
 
-		<p>Current Tags</p>
-			<% @params.each do |tag| %>
+	<ul class="tag-cloud tags--current">
+		<li class="list-head">Current Tags:</li>
+		<% @params.each do |tag| %>
 
-				<% if @params.length > 1 %>
-					<li>
-						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
-						<%= link_to "-", code_tag_path(params[:tag].gsub(tag, "")).gsub("//", "/") %>
-					</li>
-				<% else %>
-					<li>
-						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
-					</li>
-				<% end %>
-
+			<% if @params.length > 1 %>
+				<li>
+					<%= link_to tag.gsub("-", " ").capitalize, code_tag_path(tag) %>
+					<%= link_to "-", code_tag_path(params[:tag].gsub(tag, "")).gsub("//", "/"), :class => "tag--remove-link" %>
+				</li>
+			<% else %>
+				<li>
+					<%= link_to tag.gsub("-", " ").capitalize, code_tag_path(tag) %>
+				</li>
 			<% end %>
 
-		<p>Add Tags</p>
-			<% @tags.each do |tag| %>
+		<% end %>
+	</ul>
 
-				<% if @tags.length > 1 %>
-					<li>
-						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
-						<%= link_to "+", code_tag_path(params[:tag]+"/"+tag) %>
-					</li>
-				<% else %>
-					<li>
-						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
-					</li>
-				<% end %>
+	<ul class="tag-cloud tags--add">
+		<li class="list-head">Add Tags:</li>
+		<% @tags.each do |tag| %>
 
+			<% if @tags.length > 1 %>
+				<li>
+					<%= link_to tag.gsub("-", " ").capitalize, code_tag_path(tag) %>
+					<%= link_to "+", code_tag_path(params[:tag]+"/"+tag), :class => "tag--add-link"  %>
+				</li>
+			<% else %>
+				<li>
+					<%= link_to tag.gsub("-", " ").capitalize, code_tag_path(tag)%>
+				</li>
 			<% end %>
+
+		<% end %>
 
 	</ul>
-</div>
