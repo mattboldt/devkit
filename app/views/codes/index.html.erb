@@ -6,71 +6,13 @@
 
 <div class="wrap">
 
-<!-- 	<div class="tag-cloud">
-		<ul>
-		<% tag_cloud Code.tag_counts, %w{s m l} do |tag| %>
-			<% if params[:tag] %>
-				<li>
-					<%= link_to tag.name.gsub("-", " ").upcase, code_tag_path(tag.name) %> |
-					<%= link_to "+", code_tag_path(params[:tag]) + "+" + tag.name %>
-				</li>
-			<% else %>
-				<li><%= link_to tag.name.gsub("-", " ").upcase, code_tag_path(tag.name) %></li>
-			<% end %>
-		<% end %>
-		</ul>
-	</div> -->
-	<div class="tag-cloud">
-		<ul>
-		<% if params[:tag] && @codes.any? %>
-			<% title @tags.join(", ").capitalize + " | Code Snippet Tags | Devkit" %>
-			<% @tags.each do |tag| %>
-				<li>
-					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
-					<%= link_to "+", code_tag_path(params[:tag]) + "/" + tag %>
-				</li>
-			<% end %>
-			<% @params.each do |tag| %>
-				<li>
-					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
-				</li>
-<!-- 				<% if @params.length > 1 %>
-					<li>
-						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
-						<%= link_to "-", code_tag_path(params[:tag].gsub(tag+"/", "")) %>
-					</li>
-				<% else %>
-					<li>
-						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
-					</li>
-				<% end %> -->
-			<% end %>
-		<% elsif params[:tag] && @codes.empty? %>
-			<% @tags.each do |tag| %>
-				<li><%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %></li>
-			<% end %>
-			<% @params.each do |tag| %>
-				<li>
-					<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
-					<%= link_to "-", code_tag_path(params[:tag].gsub(tag, "")).gsub("//", "/") %>
-				</li>
-			<% end %>
-
-			<h1>Nothing here</h1>
-		<% else %>
-			<% @tags.each do |tag| %>
-				<li><%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %></li>
-			<% end %>
-
-		<% end %>
-		</ul>
-	</div>
+	<%= render "shared/tag_cloud" %>
 
 
 	<%= render "shared/category_nav" %>
 		<h1 class="code-header"></h1>
 
-		<% if @codes %>
+		<% if @codes.any? %>
 			<% for code in @codes do %>
 				<div class="code--block center-page">
 					<div class="code--title">
@@ -87,8 +29,9 @@
 				</div>
 			<% end %>
 		<% else %>
-			<p>There doesn't seem to be anything here... <em>yet.</em></p>
-			<p>Want to contribute some code? email: ( me [at] mattboldt [dot] com )</p>
+			<h2>No tags under: <em><%= @params.join(", ") %></em></h2>
+			<p>Well, not <em>yet.</em></p>
+			<p>Want to contribute some code? I'll add the ability to do that in the future.<br />For now, email: ( me [at] mattboldt [dot] com )</p>
 		<% end %>
 </div>
 
