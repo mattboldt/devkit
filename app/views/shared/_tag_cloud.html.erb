@@ -1,0 +1,47 @@
+<div class="tag-cloud">
+	<ul>
+
+		<% if params[:tag] %>
+			<% title @params.join(", ").capitalize + " | Code Snippet Tags | Devkit" %>
+
+			<p>Current Tags</p>
+				<% @params.each do |tag| %>
+					<% if @params.length > 1 %>
+						<li>
+							<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
+							<%= link_to "-", code_tag_path(params[:tag].gsub(tag, "")).gsub("//", "/") %>
+						</li>
+					<% else %>
+						<li>
+							<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
+						</li>
+					<% end %>
+				<% end %>
+
+			<p>Add Tags</p>
+				<% @tags.each do |tag| %>
+					<% if @tags.length > 1 %>
+						<li>
+							<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %> |
+							<%= link_to "+", code_tag_path(params[:tag]+"/"+tag+"/") %>
+						</li>
+					<% else %>
+						<li>
+							<%= link_to tag.gsub("-", " ").upcase, code_tags_path(tag) %>
+						</li>
+					<% end %>
+				<% end %>
+
+		<% else %>
+			<% title "All Code Snippets | Devkit" %>
+
+				<% @tags.each do |tag| %>
+					<li>
+						<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
+					</li>
+				<% end %>
+
+		<% end %>
+
+	</ul>
+</div>
