@@ -64,6 +64,8 @@ Devkit::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  ENV["DATABASE_URL"] = "postgres://hxgkgkvlwopeaz:Xs6k1uuyd90m2gnFgasxjntjyZ@ec2-54-225-89-169.compute-1.amazonaws.com:5432/deebehhnmqmbdj"
+
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
