@@ -1,0 +1,23 @@
+<% if @codes.any? %>
+  <% for code in @codes do %>
+    <div class="code--block center-page">
+      <div class="code--title">
+        <%= link_to code.name, code_path(code) %>
+      </div>
+      <div class="code--body">
+        <%= raw code.preview %>
+      </div>
+      <div class="code--foot">
+        <p><%= link_to "Raw", code_raw_path(code) %>
+        <%= link_to "Download", download_code_path(code) %></p>
+        <p>Tags: <%= sanitize code.tag_list.map { |t| link_to t, code_tag_path(t) }.join(" ") %></p>
+      </div>
+    </div>
+  <% end %>
+<% elsif @params %>
+  <h2>No tags under: <em><%= @params.join(", ") %></em></h2>
+<% else %>
+  <h2>Nothing here</h2>
+  <p>Well, not <em>yet.</em></p>
+  <p>Want to contribute some code? I'll add the ability to do that in the future.<br />For now, email: ( me [at] mattboldt [dot] com )</p>
+<% end %>

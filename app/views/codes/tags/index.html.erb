@@ -1,7 +1,6 @@
 
 
-<% title "Code Snippets | Devkit" %>
-
+<% title "Code Snippets: " + @params.join(", ").capitalize + " | Devkit" %>
 
 <% content_for :head do %>
 	<!-- Add to html tag -->
@@ -12,11 +11,11 @@
 	<meta name="description" content="A collection of useful tools &amp; resources for web developers &amp; designers. Code snippets in CSS, HTML, Ruby &amp; more." />
 
 	<!-- G+ Open Graph -->
-	<meta property="og:title" content="Code Snippets | Devkit" />
+	<meta property="og:title" content="<%= "Code Snippets: " + @params.join(", ").capitalize + " | Devkit" %>" />
 	<meta property="og:image" content="http://" />
 	<meta property="og:description" content="A collection of useful tools &amp; resources for web developers &amp; designers. Code snippets in CSS, HTML, Ruby &amp; more." />
 
-	<meta name="twitter:title" content="Code Snippets | Devkit" />
+	<meta name="twitter:title" content="<%= "Code Snippets: " + @params.join(", ").capitalize + " | Devkit" %>" />
 	<meta name="twitter:description" content="A collection of useful tools &amp; resources for web developers &amp; designers. Code snippets in CSS, HTML, Ruby &amp; more." />
 	<meta name="twitter:image" content="http://" />
 
@@ -24,12 +23,7 @@
 
 
 <div class="wrap">
-
-	<% @tags.each do |tag| %>
-		<li>
-			<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
-		</li>
-	<% end %>
+	<%= render "shared/tag_cloud" %>
 
 	<%= render "shared/category_nav" %>
 
