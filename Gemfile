@@ -40,6 +40,8 @@ gem 'formtastic',          github: 'justinfrench/formtastic'
 
 gem 'acts-as-taggable-on'
 
+gem 'newrelic_rpm'
+
 # gem 'protected_attributes'
 gem 'rails-observers'
 # gem 'actionpack-page_caching'
