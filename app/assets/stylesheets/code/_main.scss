@@ -106,3 +106,79 @@
 		color:#333;
 	}
 }
+
+
+
+// ----------------------------------------------------------------------
+// ------------------------- TAG CLOUD STYLES ---------------------------
+// ----------------------------------------------------------------------
+
+.tag-cloud{
+	list-style: none;
+	margin:0;
+	padding:0;
+	li{
+		display: inline-block;
+		@include linear-gradient(top, #f6f6f8, #e5e5e7);
+		border-radius:5px;
+		border:#999 1px solid;
+		overflow: hidden;
+		&:hover{
+			@include linear-gradient(top, #FFF, #e5e5e7);
+			box-shadow:rgba(0,0,0,0.2) 0px 1px 3px;
+		}
+	}
+	.list-head{
+		background: none;
+		border:0;
+		padding:.5em 1em;
+		&:hover{
+			background: none;
+			box-shadow: none;
+		}
+	}
+	a{
+		display: block;
+		float: left;
+		padding:.5em 1em;
+		color:#222;
+		font-size: .85em;
+		box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, rgba(255,255,255,0.3) 1px 0px 0px;
+	}
+		.tag--add-link{
+			float:left;
+			padding:.5em 1em;
+			box-shadow:none;
+			&:hover{
+				box-shadow:rgba(0,0,0,0.4) 0px 0px 7px;
+				@include linear-gradient(top, #009EED, #08C);
+				color:#fff;
+				text-shadow:rgba(0,0,0,0.3) 0px -1px 0px;
+			}
+		}
+		.tag--remove-link{
+			float:left;
+			padding:.5em 1em;
+			box-shadow:none;
+			&:hover{
+				box-shadow:rgba(0,0,0,0.4) 0px 0px 7px;
+				@include linear-gradient(top, #F24E29, #DE4826);
+				color:#fff;
+				text-shadow:rgba(0,0,0,0.3) 0px -1px 0px;
+			}
+		}
+}
+
+.tags--current{
+	li{
+		@include linear-gradient(top, #C9DE33, #B9CC2F);
+		&:hover{
+			@include linear-gradient(top, #DCF238, #B9CC2F);
+		}
+		a{
+			color:#fff;
+			text-shadow:rgba(0,0,0,0.3) 0px -1px 0px;
+		}
+	}
+}
+
