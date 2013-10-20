@@ -1,15 +1,35 @@
 body {
-  background: #f0f0f0; }
+  background: #f0f0f0;
+  font-family: sans-serif; }
 
 .narrow {
   max-width: 700px; }
 
 .meta-tag-body-wrap {
   margin: 0 auto;
+  padding: 0 0 200px;
   max-width: 1100px; }
 
 .ugh {
   clear: both; }
+
+.local-storage-notice {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  opacity: 0;
+  background: #08C;
+  padding: 7px 15px;
+  font-size: .75em;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0px;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-transition: opacity .5s ease-in-out; }
+
+.local-storage-init {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  opacity: .8; }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
@@ -41,8 +61,8 @@ body {
   border-top: rgba(0, 0, 0, 0.1) 1px solid; }
 
 .form-wrap {
-  max-width: 500px;
-  float: left; }
+  max-width: 800px;
+  margin: 0 auto; }
   @media (max-width: 1050px) {
     .form-wrap {
       width: 100%;
@@ -65,7 +85,7 @@ body {
     border-radius: 3px;
     box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 3px;
     outline: none;
-    -webkit-transition: box-shadow 0.3s ease-in-out; }
+    -webkit-transition: box-shadow 0.1s ease-in-out; }
     .form-block input:focus, .form-block textarea:focus {
       box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 3px, #0088cc 0px 0px 0px 1px, #0088cc 0px 0px 7px; }
   .form-block .desc {
@@ -157,9 +177,18 @@ input[type=checkbox] {
     vertical-align: top; }
 
 .output-wrap {
-  margin: 20px auto 20px 50px;
-  float: left;
-  width: 500px; }
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0px;
+  overflow: hidden;
+  background: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 30px;
+  z-index: 9999;
+  width: 100%;
+  overflow: auto;
+  -webkit-transition: height 0.2s cubic-bezier(0.5, 0.5, 0.5, 1.15); }
   @media (max-width: 1050px) {
     .output-wrap {
       width: auto;
@@ -170,17 +199,49 @@ input[type=checkbox] {
         clear: both;
         position: relative; } }
 
+.output-init {
+  height: 80%; }
+
+.output-toggle-wrap {
+  position: fixed;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  margin: 0; }
+  .output-toggle-wrap a {
+    display: block;
+    margin: 0;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    background: #222;
+    color: #fff;
+    text-shadow: #000 0px -1px 0px; }
+    .output-toggle-wrap a:hover {
+      background: #444; }
+
+.output-close {
+  position: fixed;
+  padding: 10px;
+  margin: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer; }
+  .output-close:hover {
+    color: #fff;
+    background: #222;
+    text-shadow: #000 0px -1px 0px; }
+
 .output-outer {
-  width: 550px;
+  max-width: 900px;
+  margin: 20px auto;
   border: rgba(0, 0, 0, 0.3) 1px solid;
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 30px;
   overflow: hidden; }
 
 .output-head {
   margin: 0;
   padding: 15px 0;
-  background-image: -webkit-linear-gradient(top, #f0f0f0, #dddddd);
   box-shadow: inset rgba(255, 255, 255, 0.7) 0px 1px 0px, inset rgba(0, 0, 0, 0.2) 0px -1px 0px; }
   .output-head a {
     margin: 0 20px;
@@ -215,8 +276,8 @@ input[type=checkbox] {
 
 .complete {
   max-width: 700px;
-  margin: 40px auto 100px;
-  padding: 30px;
+  margin: 0px auto 100px;
+  padding: 10px 30px;
   text-align: center;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px; }

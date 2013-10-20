@@ -15,25 +15,25 @@ $(function(){
 		$(this).parent().css("display", "none");
 	});
 
-	$(".output-outer").draggable({
-		handle: ".output-head",
-		containment: "body"
+	$("form").change(function(){
+		setTimeout(function(){
+
+			// Bit of generic data to test if saved data exists on page load
+			localStorage.setItem("flag", "set");
+
+			// serializeArray is awesome and powerful
+			var data = $(".meta-info").serializeArray();
+
+			// iterate over results
+			$.each(data, function(i, obj) {
+				localStorage.setItem(obj.name, obj.value);
+			});
+
+			$(".local-storage-notice").addClass("local-storage-init");
+			setTimeout(function(){$(".local-storage-notice").removeClass("local-storage-init")}, 5000)
+
+		}, 500);
 	});
-
-	setInterval(function(){
-
-		// Bit of generic data to test if saved data exists on page load
-		localStorage.setItem("flag", "set");
-
-		// serializeArray is awesome and powerful
-		var data = $(".meta-info").serializeArray();
-
-		// iterate over results
-		$.each(data, function(i, obj) {
-			localStorage.setItem(obj.name, obj.value);
-		});
-
-	}, 5000);
 
 	// Test if there is already saved data
 	if (localStorage.getItem("flag") == "set") {
@@ -57,31 +57,62 @@ $(function(){
 
 	});
 
-	var $output   = $(".output-outer"),
-        $window    = $(window),
-        offset     = $("#body").offset(),
-        formBlock = $(".form-wrap").offset(),
-        topPadding = 15;
+	$(".output-toggle").click(function(e){
+		e.preventDefault();
+		if ($(this).data("status") === "active"){
+			$(this).data("status", "inactive");
+			$(this).html("Get the code!");
+			$(".output-wrap").removeClass("output-init");
+		}
+		else{
+			$(this).data("status", "active");
+			$(this).html("Close");
+			$(".output-wrap").addClass("output-init");
+		}
+	});
+	$(".output-close").click(function(){
+		$(".output-toggle").data("status", "inactive");
+		$(".output-toggle").html("Get the code!");
+		$(".output-wrap").removeClass("output-init");
+	});
+
+	// var $output   = $(".output-outer"),
+ //        $window    = $(window),
+ //        offset     = $("#body").offset(),
+ //        formBlock = $(".form-wrap").offset(),
+ //        topPadding = 15;
 
 
-	    $window.scroll(function() {
-	    	if ($output.css("width") == "550px"){
-		        if ($window.scrollTop() > offset.top) {
-		            $output
-			            .stop().animate({
-			                top: "40px"
-			            })
-			            .css("position", "fixed");
-		        }
-		        else {
-		            $output
-			            .stop().animate({
-			                top: "0px"
-			            })
-			            .css("position", "static");
-		        }
-		    }
-	    });
+	//     $window.scroll(function() {
+	//         if ($window.scrollTop() > offset.top) {
+	//             $output
+	// 	            .stop().animate({
+	// 	                top: "40px"
+	// 	            })
+	// 	            .css("position", "fixed");
+	//         }
+	//         else {
+	//             $output
+	// 	            .stop().animate({
+	// 	                top: "0px"
+	// 	            })
+	// 	            .css("position", "static");
+	//         }
+	//     });
+
+	   //  $(window).scroll(function() {
+		  //   if ($(window).scrollTop() >= ($("body").outerHeight()-$(window).outerHeight())-50){
+		  //   	$(".output-toggle").data("status", "active");
+				// $(".output-toggle").html("Close");
+				// $(".output-wrap").addClass("output-init");
+		  //   }
+		  //   else{
+		  //   	$(".output-toggle").data("status", "inactive");
+				// $(".output-toggle").html("Get the code!");
+				// $(".output-wrap").removeClass("output-init");
+
+		  //   }
+	   //  });
 
 	new dataInsert();
 
