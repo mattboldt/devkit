@@ -21,6 +21,7 @@ resources :codes , :path => "/code/" do
       end
 end
 
+resources :blog_posts, :path => "blog"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
