@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<% if content_for?(:html) %>
+	<%= yield(:html) %>
+<% else %>
+	<html>
+<% end %>
 <head>
 <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
