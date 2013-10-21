@@ -1,5 +1,26 @@
 <% title @code.name + " | Code Snippets | Devkit" %>
 
+<% content_for :html do %>
+<html itemscope itemtype="http://schema.org/Code">
+<% end %>
+
+<% content_for :head do %>
+
+	<!-- Basic meta info -->
+	<meta name="name" content="<%= @code.name %>" />
+	<meta name="description" content="<%= @code.name %>" />
+
+	<!-- G+ Open Graph -->
+	<meta property="og:title" content="<%= @code.name %> | Code Snippets | Devkit" />
+	<meta property="og:image" content="http://" />
+	<meta property="og:description" content="<%= @code.name %>" />
+
+	<meta name="twitter:title" content="<%= @code.name %> | Code Snippets | Devkit" />
+	<meta name="twitter:description" content="<%= @code.name %>" />
+	<meta name="twitter:image" content="http://" />
+
+<% end %>
+
 <div class="wrap">
 	<%= render "shared/category_nav" %>
 	<div class="container">
