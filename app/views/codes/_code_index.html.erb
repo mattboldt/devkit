@@ -5,6 +5,7 @@
         <%= link_to code.name, code_path(code) %>
       </div>
       <div class="code--body">
+        <%= link_to "", code_path(code), :class => "link-overlay" %>
         <%= raw code.preview %>
       </div>
       <div class="code--foot">
