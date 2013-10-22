@@ -22,23 +22,35 @@
 <% end %>
 
 <div class="wrap">
-	<%= render "shared/category_nav" %>
+	<div class="code--title">
+		<%= @code.name %>
+	</div>
 	<div class="container">
-		<% tag_cloud Code.tag_counts, %w{s m l} do |tag| %>
-			<%= link_to tag.name.gsub("-", " ").upcase, code_tag_path(tag.name) %>
-		<% end %>
-		<div class="code--block">
-			<div class="code--title">
-				<%= @code.name %>
-			</div>
-			<div class="code--body">
-				<%= link_to "Raw", code_raw_path(@code) %>
-				<%= link_to "Download", download_code_path(@code) %>
-				<button id="my-button" data-clipboard-text="Copy me!">Copy to Clipboard</button>
-				<div id="code"><%= raw @code.body %></div>
+		<div class="main">
+			<div class="code--block">
+				<div class="code--body">
+					<%= link_to "Raw", code_raw_path(@code) %> | 
+					<%= link_to "Download", download_code_path(@code) %>
+					<div id="code"><%= raw @code.body %></div>
+				</div>
 			</div>
 		</div>
+		<aside>
+			<div class="sidebar">
+				<h3>More Tags</h3>
+				<ul>
+				<% tag_cloud Code.tag_counts, %w{s m l} do |tag| %>
+					<li><%= link_to tag.name.gsub("-", " ").upcase, code_tag_path(tag.name) %></li>
+				<% end %>
+				</ul>
+			</div>
+		</aside>
 	</div>
+</div>
+
+<div class="wrap">
+
+
 	    <div id="disqus_thread"></div>
     <script type="text/javascript">
         var disqus_shortname = 'devkit'; // required: replace example with your forum shortname

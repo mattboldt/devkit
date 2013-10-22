@@ -24,6 +24,7 @@ a{
 	max-width:1500px;
 	margin:auto;
 	padding:0 20px;
+	clear: both;
 }
 
 .narrow{
@@ -82,6 +83,21 @@ h5, .h5 {
 h6, .h6 {
     font-size: 0.67em;
     margin: 2.33em 0;
+}
+
+.container{
+	clear:both;
+}
+
+.main{
+	max-width:750px;
+	float:left;
+}
+.sidebar{
+	float:left;
+	max-width:200px;
+	margin:40px auto 0;
+	padding:20px 10px;
 }
 
 .nav{
