@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131021010915) do
+ActiveRecord::Schema.define(version: 20131024031058) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20131021010915) do
     t.text     "preview"
     t.text     "raw"
     t.string   "filetype",    default: "txt"
+    t.text     "body_input"
   end
 
   add_index "codes", ["slug"], name: "index_codes_on_slug"
