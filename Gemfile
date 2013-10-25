@@ -42,6 +42,12 @@ gem 'acts-as-taggable-on'
 
 gem 'newrelic_rpm'
 
+# markdown / syntax highlighting
+gem "pygments.rb"
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
+
 # gem 'protected_attributes'
 gem 'rails-observers'
 # gem 'actionpack-page_caching'

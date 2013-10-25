@@ -13,6 +13,7 @@
 
 .code--block{
 	display: block;
+	width:750px;
 	vertical-align: top;
 	margin:0 auto 40px;
 	border-radius:5px;
@@ -50,7 +51,7 @@
 		}
 		pre{
 			margin:0 !important;
-			text-shadow:rgba(0,0,0,0.8) 0px -1px 0px;
+			// text-shadow:rgba(0,0,0,0.8) 0px -1px 0px;
 		}
 	}
 		.link-overlay{

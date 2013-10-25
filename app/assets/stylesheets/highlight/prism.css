@@ -9,6 +9,8 @@ pre[class*="language-"] {
 	color: black;
 	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
+	font-size: 12px;
+	line-height: 16px;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -45,13 +47,14 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1.23em 1em;
+	padding: .5em 1em;
 	margin: .5em 0;
 	overflow: auto;
-	background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.02) 50%);
+	/*background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.02) 50%);*/
 background-position: top;
 background-size: 3em 2.4em;
 }
+
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
@@ -188,11 +191,12 @@ pre.line-numbers > code {
 	position: absolute;
 	pointer-events: none;
 	top: 0;
-	font-size: 100%;
+	font-size: 12px;
+	line-height: 13px;
 	left: -3.8em;
 	width: 3em; /* works for line-numbers below 1000 lines */
 	letter-spacing: -1px;
-	border-right: 2px solid #EEE;
+	border-right: 1px solid #EEE;
 
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -211,12 +215,19 @@ pre.line-numbers > code {
 			content: counter(linenumber);
 			color: #DDD;
 			font-weight: 100;
-			font-size: .8em;
-			height:19px;
+			height:16px;
 			display: block;
 			padding:0 .8em 0 .5em;
 			text-align: right;
 		}
+/*		.line-numbers-rows span:after{
+			content:"";
+			display: block;
+			position: absolute;
+			margin-top:-4px;
+			width:200px;
+			border:red 1px solid;
+		}*/
 .token a {
 	color: inherit;
 }
