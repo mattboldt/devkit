@@ -20,7 +20,7 @@ resources :codes , :path => "/code/" do
         get :download
       end
 end
-
+  post "/code/preview", to: "codes#preview", :trailing_slash => false
 resources :blog_posts, :path => "blog"
 
   # The priority is based upon order of creation:
