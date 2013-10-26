@@ -1,4 +1,4 @@
-class AdminUsersController < ApplicationController
+class Admin::AdminUsersController < ApplicationController
   def index
     if admin_user_signed_in?
       @codes = Code.all
