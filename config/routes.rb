@@ -2,8 +2,14 @@ Devkit::Application.routes.draw do
 
   devise_for :admin_users
 
-  resources :admin, :controller => "admin_users" do
+  # resources :admin, :controller => "admin_users" do
+  #   resources :codes
+  # end
+  namespace :admin do
+    get "", to: "admin_users#index"
     resources :codes
+    resources :tools
+    resources :blog_posts
   end
 
   get "/search" => "search#index"
