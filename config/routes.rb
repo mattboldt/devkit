@@ -1,7 +1,10 @@
 Devkit::Application.routes.draw do
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  devise_for :admin_users
+
+  resources :admin, :controller => "admin_users" do
+    resources :codes
+  end
 
   get "/search" => "search#index"
 
