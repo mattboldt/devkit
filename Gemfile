@@ -9,6 +9,7 @@ gem 'rails', '4.0.0'
 group :development do
 	gem 'sqlite3'
 	gem "better_errors"
+	gem 'annotate'
 end
 
 group :production do
