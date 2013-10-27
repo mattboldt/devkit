@@ -5,9 +5,13 @@ Devkit::Application.routes.draw do
   # resources :admin, :controller => "admin_users" do
   #   resources :codes
   # end
+
   namespace :admin do
     get "", to: "admin_users#index"
-    resources :codes
+    resources :users, :controller => "admin_users"
+    resources :codes, :path => "/code/"
+      post "codes/preview", to: "codes#preview"
+      patch "codes/preview", to: "codes#preview"
     resources :tools
     resources :blog_posts
   end
@@ -29,7 +33,7 @@ resources :codes , :path => "/code/" do
         get :download
       end
 end
-  post "/code/preview", to: "codes#preview", :trailing_slash => false
+  post "/code/preview", to: "admin/codes#preview"
 resources :blog_posts, :path => "blog"
 
   # The priority is based upon order of creation:

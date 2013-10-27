@@ -1,4 +1,4 @@
-<% title @tool.title + " | Tools | Devkit" %>
+<% title @tool.name + " | Tools | Devkit" %>
 <% content_for :html do %>
 	<html itemscope itemtype="http://schema.org/Product">
 <% end %>
@@ -6,15 +6,15 @@
 
 <%= @tool.head %>
 <!-- Basic meta info -->
-<meta name="name" content="<%= @tool.title %>" />
+<meta name="name" content="<%= @tool.name %>" />
 <meta name="description" content="<%= @tool.desc %>" />
 
 <!-- G+ Open Graph -->
-<meta property="og:title" content="<%= @tool.title %> | Tools | Devkit" />
+<meta property="og:title" content="<%= @tool.name %> | Tools | Devkit" />
 <meta property="og:image" content="http://" />
 <meta property="og:description" content="<%= @tool.desc %>" />
 
-<meta name="twitter:title" content="<%= @tool.title %> | Tools | Devkit" />
+<meta name="twitter:title" content="<%= @tool.name %> | Tools | Devkit" />
 <meta name="twitter:description" content="<%= @tool.desc %>" />
 <meta name="twitter:image" content="http://" />
 
@@ -26,7 +26,7 @@
 
 <section class="header">
 	<div class="wrap" style="text-align:center;">
-		<h2 class="tagline"><%= @tool.title %></h2>
+		<h2 class="tagline"><%= @tool.name %></h2>
 		<p style="max-width:500px;margin:20px auto;"><%= @tool.desc %></p>
 	</div>
 </section>
