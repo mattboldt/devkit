@@ -1,33 +1,12 @@
-<% content_for :head do %>
-	<script>
-$(function(){
-	var form = $("#code-form form");
-    $(".code-preview").click(function (){
-        $.ajax({
-          type: "POST",
-          url: "<%= admin_codes_preview_path %>",
-          headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
-          data: $(form).serialize(),
-          dataType: "html",
-          success: function(data){
-		        $(".result").html(data);
-              }
-        });
-    });
-});
 
-</script>
+<div class="wrap">
+  <button class="code-preview" data-status="inactive">Preview</button>
 
-<% end %>
+  <%= render "code_form" %>
 
-
-<div id="code-form">
-<%= form_for @code do |f| %>
-	<%= f.text_field :name %>
-	<%= f.text_area :body_input %>
-	<%= f.submit %>
-<% end %>
 </div>
 
-<div class="result">Here's the result:</div>
-<button class="code-preview">Preview</button>
+<div class="result-wrap">
+  <button class="close-preview">Close Preview</button>
+  <div class="result"></div>
+</div>

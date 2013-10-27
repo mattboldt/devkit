@@ -8,13 +8,14 @@
 <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "admin/main", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "admin/main" %>
 
   <%= csrf_meta_tags %>
 
 <script>
-
 $(function(){
-	var form = $("#code-form form");
+    // Form preview ajax
+    var form = $("#code-form form");
     $(".code-preview").click(function (){
         $.ajax({
           type: "POST",
@@ -23,7 +24,7 @@ $(function(){
           data: $(form).serialize(),
           dataType: "html",
           success: function(data){
-		        $(".result").html(data);
+                $(".result").html(data);
               }
         });
         $(".result-wrap").addClass("result-active");
@@ -31,10 +32,12 @@ $(function(){
     $(".close-preview").click(function(){
       $(".result-wrap").removeClass("result-active");
     });
+    $(document).keyup(function(e) {
+    if (e.keyCode == 13) { $(".result-wrap").removeClass("result-active"); }     // enter
+    if (e.keyCode == 27) { $(".result-wrap").removeClass("result-active"); }   // esc
+  });
 });
-
 </script>
-
 
   <%= yield :head %>
 

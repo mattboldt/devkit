@@ -39,6 +39,7 @@
 .result-wrap{
 	position: absolute;
 	top:0;
+	bottom:0;
 	left:-99999999px;
 	height:100%;
 	width:100%;
@@ -56,9 +57,15 @@
 
 	.result{
 		margin:auto;
-		width:80%;
+		width:95%;
+		max-width:1000px;
 		height:100%;
 	}
+
+.code-preview{
+	float:right;
+}
+
 .close-preview{
 	position: fixed;
 	top:10px;
@@ -72,5 +79,25 @@
 	border:rgba(0,0,0,0.3) 1px solid;
 	background:#f0f0f0;
 	font-size: .85em;
+}
+
+
+.admin-form{
+	input[type=text], textarea{
+		margin:0 0 .5em;
+		padding:.25em;
+	}
+	.name{
+		font-size: 1.5em;
+	}
+	.form-block{
+		textarea{
+
+		}
+		.label{
+			display: block;
+			margin:0 0 .25em;
+		}
+	}
 }
 
