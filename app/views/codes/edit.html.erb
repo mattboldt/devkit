@@ -5,7 +5,7 @@ $(function(){
     $(".code-preview").click(function (){
         $.ajax({
           type: "POST",
-          url: "<%= admin_codes_preview_path %>",
+          url: "<%= code_preview_path %>",
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
           data: $(form).serialize(),
           dataType: "html",

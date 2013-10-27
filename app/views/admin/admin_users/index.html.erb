@@ -1,3 +1,12 @@
+
+<div class="wrap">
+<h1>Codes</h1>
 <% for code in @codes %>
 	<%= link_to code.name, admin_code_path(code) %><br />
 <% end %>
+<h1>Tools</h1>
+<% for tool in @tools %>
+	<%= link_to tool.name, admin_tool_path(tool) %><br />
+<% end %>
+
+</div>

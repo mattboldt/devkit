@@ -149,3 +149,37 @@
 	border-bottom-right-radius:5px;
 }
 
+
+.admin-nav{
+	@include linear-gradient(top, #444, #222);
+	box-shadow:inset rgba(255,255,255,0.1) 0px -1px 0px, inset rgba(255,255,255,0.1) 0px 1px 0px, rgba(0,0,0,0.3) 0px 0px 5px;
+	border-bottom:#999 1px solid;
+	.nav-wrap{
+		max-width:1000px;
+		margin:0 auto;
+		box-shadow: rgba(0,0,0,.1) -1px 0px 0px, inset rgba(255,255,255,0.1) 1px 0px 0px;
+	}
+	.main-nav{
+		a{
+			color:#f8f8f8;
+			padding:1em 1em;
+			text-shadow:rgba(0,0,0,0.9) 0px -1px 0px;
+			box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, rgba(255,255,255,0.1) 1px 0px 0px;
+			&:hover{
+				box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, rgba(255,255,255,0.1) 1px 0px 0px, inset rgba(255,255,255,.1) 0px 0px 20px;
+			}
+			&:active{
+				box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, inset rgba(0,0,0,0.2) 0px 0px 5px;
+			}
+		}
+		.logo{
+			a{
+				padding:.5em 1em;
+			}
+			h1{
+				color:#f8f8f8;
+			}
+		}
+	}
+}
+
