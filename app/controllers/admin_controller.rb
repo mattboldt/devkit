@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   layout "admin"
-  before_filter :get_models#, :authenticate_user!
+  before_filter :get_models, :authenticate_user!
   helper_method :sort_column, :sort_direction
 
   def get_models
