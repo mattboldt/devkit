@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: dev_tools
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  desc        :string(255)
+#  head        :text
+#  body        :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  url         :string(255)
+#  category_id :integer
+#
+
 class DevTool < ActiveRecord::Base
 	# attr_accessible :body, :head, :title, :url, :desc, :category_id
 	validates_uniqueness_of :url

@@ -1,14 +1,17 @@
 Devkit::Application.routes.draw do
 
-  devise_for :admin_users
 
   # resources :admin, :controller => "admin_users" do
   #   resources :codes
   # end
 
+  scope "/admin" do
+    devise_for :users
+  end
+
   namespace :admin do
-    get "", to: "admin_users#index"
-    resources :users, :controller => "admin_users"
+    get "", to: "dashboard#index"
+    resources :users
     resources :codes, :path => "/code/"
       post "codes/preview", to: "codes#preview"
       patch "codes/preview", to: "codes#preview"

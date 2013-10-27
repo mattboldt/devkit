@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: codes
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  body        :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  category_id :integer
+#  slug        :string(255)
+#  preview     :text
+#  raw         :text
+#  filetype    :string(255)      default("txt")
+#  body_input  :text
+#
+
 class Code < ActiveRecord::Base
 	require 'nokogiri'
 	# attr_accessible :body, :name, :category_id, :url, :preview, :tag_list

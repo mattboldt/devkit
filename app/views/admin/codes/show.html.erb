@@ -1,5 +1,9 @@
 
-<h1><%= link_to "Edit Code", edit_admin_code_path(@code) %></h1>
-
-<%= @code.name %><br />
-<%= raw @code.body %>
+<div class="wrap">
+	<div class="panel">
+		<h1><%= @code.name %> | <%= link_to "Edit", edit_admin_code_path(@code) %></h1>
+	</div>
+	<div class="panel panel-body">
+		<%= raw @code.body %>
+	</div>
+</div>

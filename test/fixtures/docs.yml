@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: docs
+#
+#  id         :integer          not null, primary key
+#  title      :string(255)
+#  body       :text
+#  url        :string(255)
+#  tool_id    :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
