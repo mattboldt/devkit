@@ -8,6 +8,10 @@
       <span class="label"><%= f.label :body_input %> (Markdown)</span>
       <%= f.text_area :body_input, :class => "code-edit-view", :rows => "30" %>
     </div>
+      <div class="form-block">
+      <span class="label"><%= f.label :preview_input %> (Markdown)</span>
+      <%= f.text_area :preview_input, :class => "code-edit-view", :rows => "5" %>
+    </div>
     <div class="form-block">
       <span class="label"><%= f.label :tag_list %> (Separated by commas)</span>
       <%= f.text_field :tag_list %>
