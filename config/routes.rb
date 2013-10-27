@@ -5,9 +5,10 @@ Devkit::Application.routes.draw do
   #   resources :codes
   # end
 
-  scope "/admin" do
-    devise_for :users
-  end
+  devise_for :users, :controllers => { :sessions => "admin/sessions" }
+  # scope "/admin" do
+  #   devise_for :users
+  # end
 
   namespace :admin do
     get "", to: "dashboard#index"

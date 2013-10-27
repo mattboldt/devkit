@@ -11,13 +11,18 @@
 			</tr>
 		</thead>
 		<tbody>
+			<h1><%= link_to "+ New Code", new_admin_code_path %></h1>
 			<% for code in @codes %>
 			<tr>
 				<td><%= code.id %></td>
 				<td><%= code.name %></td>
 				<td><%= code.tag_list %></td>
 				<td><%= code.created_at %></td>
-				<td><%= link_to "Edit", edit_admin_code_path(code) %> | <%= link_to "View", admin_code_path(code) %></td>
+				<td><%= link_to "Edit", edit_admin_code_path(code) %> |
+					<%= link_to "View", admin_code_path(code) %> |
+					<%= link_to "Delete", [:admin, code], method: :delete,
+												data: { confirm: "Are you sure you want to delete this code?" } %>
+				</td>
 			</tr>
 			<% end %>
 		</tbody>

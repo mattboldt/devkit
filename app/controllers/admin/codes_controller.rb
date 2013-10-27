@@ -12,6 +12,16 @@ class Admin::CodesController < AdminController
     @code = Code.new
   end
 
+  def create
+    @code = Code.new(code_params)
+    if @code.save
+      flash[:success] = "Code Created"
+      redirect_to admin_code_path(@code)
+    else
+      render "new"
+    end
+  end
+
   def edit
     @code = Code.find(params[:id])
   end
@@ -22,9 +32,14 @@ class Admin::CodesController < AdminController
       flash[:success] = "Code Edited"
       redirect_to admin_code_path(@code)
     else
-      flash[:notice] = "Error editing code"
-      redirect_to admin_code_edit_path(@code)
+      render "edit"
     end
+  end
+
+  def destroy
+    Code.find(params[:id]).destroy
+    flash[:success] = "Code removed"
+    redirect_to admin_codes_path
   end
 
   def preview

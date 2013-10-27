@@ -1,0 +1,23 @@
+  <div id="code-form" class="admin-form code-form">
+  <%= form_for [:admin, @code] do |f| %>
+    <%= render "admin/codes/error_messages" %>
+    <div class="form-block">
+      <%= f.text_field :name, :class => "name" %>
+    </div>
+    <div class="form-block">
+      <span class="label"><%= f.label :body_input %> (Markdown)</span>
+      <%= f.text_area :body_input, :class => "code-edit-view", :rows => "30" %>
+    </div>
+    <div class="form-block">
+      <span class="label"><%= f.label :tag_list %> (Separated by commas)</span>
+      <%= f.text_field :tag_list %>
+    </div>
+    <div class="form-block">
+      <span class="label"><%= f.label :filetype %></span>
+      <%= f.text_field :filetype %>
+    </div>
+    <div class="form-block">
+      <%= f.submit %>
+    </div>
+  <% end %>
+  </div>

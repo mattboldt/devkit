@@ -17,22 +17,18 @@
 
 class Code < ActiveRecord::Base
 	require 'nokogiri'
-	# attr_accessible :body, :name, :category_id, :url, :preview, :tag_list
-	before_save :render_body
+	before_save :render_body, :defaults
 	acts_as_taggable
+	validates :name, presence: true
+	validates :body_input, presence: true
+	validates :tag_list, presence: true
 
 	# custom slug method defined in lib/app_utilities.rb
 	# initialized in config/initializers/active_record_extensions.rb
 	custom_slugs_with(:slug)
 
-	def before_save
-		url = url.downcase
-		# body_scrape = Nokogiri::HTML(body)
-		# frag.xpath("//code").each do |code|
-		# 	code.inner_html.gsub("<", "&lt;")
-		# end
-		# body = body_scrape
-		# body = "asd"
+	def defaults
+		self.filetype ||= "txt"
 	end
 
 	private
