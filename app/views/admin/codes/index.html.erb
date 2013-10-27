@@ -1,0 +1,25 @@
+
+<div class="wrap">
+	<table class="admin-table">
+		<thead>
+			<tr>
+				<th><%= sortable("id", "ID") %></th>
+				<th><%= sortable("name", "Name") %></th>
+				<th>Tag List</th>
+				<th><%= sortable("created_at", "Created At") %></th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for code in @codes %>
+			<tr>
+				<td><%= code.id %></td>
+				<td><%= code.name %></td>
+				<td><%= code.tag_list %></td>
+				<td><%= code.created_at %></td>
+				<td><%= link_to "Edit", edit_admin_code_path(code) %> | <%= link_to "View", admin_code_path(code) %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

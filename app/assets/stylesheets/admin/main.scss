@@ -1,0 +1,76 @@
+@import "base";
+@import "normalize";
+@import "globals";
+@import "nav";
+@import "pygments";
+
+
+.admin-table{
+	width:90%;
+	border-radius:3px;
+	box-shadow:rgba(0,0,0,0.1) 0px 1px 3px, rgba(0,0,0,0.1) 0px 0px 0px 1px;
+	thead th{
+		padding:1em;
+		box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, rgba(255,255,255,0.7) 1px 0px 0px;
+		border-bottom:#f0f0f0 1px solid;
+		@include linear-gradient(top, #f8f8f8, #f0f0f0);
+	}
+	tbody{
+		tr{
+			&:nth-child(2n+2) td{
+				background:#f0f0f0;
+			}
+			&:hover{
+				box-shadow:rgba(0,0,0,0.1) 0px 0px 5px;
+			}
+		}
+		td{
+			padding:1em;
+			border-bottom:rgba(0,0,0,0.1) 1px solid;
+		}
+	}
+}
+
+.code-edit-view{
+	width:100%;
+	max-width:100%;
+}
+
+.result-wrap{
+	position: absolute;
+	top:0;
+	left:-99999999px;
+	height:100%;
+	width:100%;
+	opacity: 0;
+	padding:20px 40px;
+	background:#fff;
+	overflow: auto;
+	-moz-transition:opacity .3s ease-in;
+	-moz-box-sizing:border-box;
+}
+	.result-active{
+		left:0;
+		opacity: 1;
+	}
+
+	.result{
+		margin:auto;
+		width:80%;
+		height:100%;
+	}
+.close-preview{
+	position: fixed;
+	top:10px;
+	left:10px;
+	z-index:9999;
+}
+
+.alert{
+	margin:auto;
+	padding:.5em;
+	border:rgba(0,0,0,0.3) 1px solid;
+	background:#f0f0f0;
+	font-size: .85em;
+}
+
