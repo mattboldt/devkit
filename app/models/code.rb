@@ -20,6 +20,7 @@ class Code < ActiveRecord::Base
 	before_save :render_body, :defaults
 	acts_as_taggable
 	validates :name, presence: true
+	validates :preview_input, presence: true
 	validates :body_input, presence: true
 	validates :tag_list, presence: true
 
@@ -39,6 +40,7 @@ class Code < ActiveRecord::Base
 			extensions = {:autolink => true, :hard_wrap => true, :space_after_headers => true, :highlight => true, :tables => true, :fenced_code_blocks => true, :gh_blockcode => true}
 			redcarpet = Redcarpet::Markdown.new(renderer, extensions)
 			self.body = redcarpet.render self.body_input
+			self.preview = redcarpet.render self.preview_input
 		end
 end
 
