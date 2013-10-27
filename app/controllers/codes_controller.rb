@@ -14,6 +14,13 @@ class CodesController < ApplicationController
     @code = Code.new
   end
 
+  def edit
+    @code = Code.find(params[:id])
+  end
+
+  def update
+  end
+
   def download
     @code = Code.find(params[:id])
     # Rails.logger.info params.inspect

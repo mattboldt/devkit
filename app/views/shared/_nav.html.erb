@@ -10,7 +10,7 @@
 				<ul class="main-nav-dropdown">
 					<li class="list-head"><h3>Tools</h3></li>
 					<% for tool in @tools %>
-						<li><%= link_to tool.title, tool_path(tool) %></li>
+						<li><%= link_to tool.name, tool_path(tool) %></li>
 					<% end %>
 				</ul>
 			</li>

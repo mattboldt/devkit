@@ -1,3 +1,13 @@
-<ul>
-	<li>a</li>
-</ul>
+
+<div class="nav-container admin-nav">
+	<div class="nav-wrap">
+		<ul class="nav main-nav">
+			<li class="logo"><a href="/"><h1>devkit</h1><span class="logo-tag">Tools &amp; Resources <br /> for Developers</span></a></li>
+			<li><%= link_to "Home", admin_path %></li>
+			<li><%= link_to "Admins", admin_users_path %></li>
+			<li><%= link_to "Codes", admin_codes_path %></li>
+			<li><%= link_to "Tools", admin_tools_path %></li>
+			<li><%= link_to "Blog Posts", admin_blog_posts_path %></li>
+		</ul>
+	</div>
+</div>

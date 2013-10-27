@@ -1,6 +1,6 @@
-class AdminController < ApplicationController   
-  layout "admin" 
-end
-
-class Admin::PostController < AdminController 
+class AdminController < ApplicationController
+  layout "admin"
+  @codes = Code.all
+  @tools = DevTool.all
+  @blog_posts = BlogPost.all
 end
