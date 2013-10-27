@@ -1,15 +1,14 @@
 Devkit::Application.routes.draw do
 
-
-  # resources :admin, :controller => "admin_users" do
-  #   resources :codes
-  # end
+  root :to => "home#index"
 
   devise_for :users, :controllers => { :sessions => "admin/sessions" }
+  # old scope doesn't work with devise's sessions
   # scope "/admin" do
   #   devise_for :users
   # end
 
+  # admin backend
   namespace :admin do
     get "", to: "dashboard#index"
     resources :users
@@ -20,25 +19,38 @@ Devkit::Application.routes.draw do
     resources :blog_posts
   end
 
-  get "/search" => "search#index"
 
-  root :to => "home#index"
+  # Tools route
+  get "/tools/tags/:tag", to: "dev_tools#index", as: :tool_tag
+  resources :tools, :controller => "dev_tools" do
+    # Tool docs
+    resources :docs, :controller => "tools/docs"
+  end
 
-get "/tools/tags/:tag", to: "dev_tools#index", as: :tool_tag
-resources :tools, :controller => "dev_tools" do
-  resources :docs, :controller => "tools/docs"
-end
 
-get "/code/tags/*tag", to: "codes/tags#index", as: :code_tag, :trailing_slash => false
-get '/code/tags', to: redirect('/code/')
-resources :codes , :path => "/code/" do
-    get "/raw/", :to => "codes/raw#show"
-        member do
-        get :download
-      end
-end
+  # code snippets tags routes
+  get "/code/tags/*tag", to: "codes/tags#index", as: :code_tag, :trailing_slash => false
+  get '/code/tags', to: redirect('/code/')
+
+  # Code method path
   post "/code/preview", to: "admin/codes#preview"
-resources :blog_posts, :path => "blog"
+
+  # Code resource
+  resources :codes , :path => "/code/" do
+    # Show raw code
+    get "/raw/", :to => "codes/raw#show"
+    # Download code path
+    member do
+      get :download
+    end
+  end
+
+
+  #blog
+  resources :blog_posts, :path => "blog"
+
+  # single google search page
+  get "/search" => "search#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
