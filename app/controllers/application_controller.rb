@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 protect_from_forgery
 before_filter :get_global_vars
+add_flash_types :error
 	def get_global_vars
 		@tools = DevTool.all
 	end
