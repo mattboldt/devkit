@@ -66,6 +66,6 @@ class Admin::CodesController < AdminController
     end
 
     def code_params
-      params.require(:code).permit(:name, :body_input, :preview_input, :filetype, :raw, :slug)
+      params.require(:code).permit(:name, :body_input, :preview_input, :filetype, :raw, :slug, :tag_list)
     end
 end
