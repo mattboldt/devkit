@@ -6,7 +6,7 @@ module ActiveRecordExtensions
     # Override 'to_param'.
     def custom_slugs_with(seed)
       self.redefine_method(:to_param) do
-        [id, self.send(seed).parameterize].join("-")
+        [id, self.send(seed).to_s].join("-")
       end
     end
 
