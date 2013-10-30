@@ -17,8 +17,8 @@ class Codes::TagsController < ApplicationController
           else
             @codes = Code.tagged_with(params[:tag].split("/"))
             if !@codes.any?
-              redirect_to :back, status: 301,
-                error: "No Codes under: #{@params.join(', ')}. Sorry! Redirected to previous tag(s)."
+              redirect_to codes_path, status: 301,
+                error: "No Codes under: #{@params.join(', ')}. Sorry! Redirected to all tags."
             end
           end
 

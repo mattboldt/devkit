@@ -55,8 +55,11 @@
 
 .home-search-wrap{
 	display: block;
+	position: relative;
 	width:100%;
-	padding:0px 0px 0px 15px;
+	max-width:600px;
+	margin:0 auto;
+	padding:0 0 0 15px;
 	background:#fff;
 	@include border-radius(7px);
 	border:#e5e5e5 1px solid;
@@ -69,9 +72,10 @@
 	.home-search{
 		display: block;
 		float:left;
-		width:89%;
+		width:100%;
+		max-width:500px;
 		padding:20px 0;
-		font-size: 1.75em;
+		font-size: 1.5em;
 		border:0;
 		outline:none;
 	}
@@ -88,6 +92,40 @@
 		box-shadow: inset rgba(255,255,255,0.3) 0px 1px 0px;
 		border:#006399 1px solid;
 	}
+		.search-tooltip{
+			position: absolute;
+			top:-10px;
+			right:-180px;
+			opacity:0;
+			visibility: hidden;
+			max-width:220px;
+			padding:20px 15px;
+			background-color:rgba(0,0,0,0.8);
+			@include linear-gradient(top, rgba(50,50,50,0.8), rgba(0,0,0,0.8));
+			border-radius:5px;
+			-webkit-transition:right .25s cubic-bezier(.5, 1, .5, 1), top .25s cubic-bezier(.5, 1, .5, 1), opacity .25s ease-in, visibility .25s ease-in;
+			p{
+				margin:0;
+			}
+			&:before{
+				content:"";
+				display: block;
+				position: absolute;
+				left:-30px;
+				top:30px;
+				border:transparent 15px solid;
+				border-right-color:rgba(0,0,0,0.9);
+			}
+		}
+			.search-tooltip-init{
+				right:-240px;
+				opacity:1;
+				visibility: visible;
+			}
+			.search-tooltip-close{
+				top:-400px;
+			}
+
 
 .examples{
 	margin:10px 0 50px;

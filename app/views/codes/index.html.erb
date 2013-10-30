@@ -24,12 +24,8 @@
 
 
 <div class="wrap">
-
-	<% @tags.each do |tag| %>
-		<li>
-			<%= link_to tag.gsub("-", " ").upcase, code_tag_path(tag) %>
-		</li>
-	<% end %>
+	<p><%= error %></p>
+	<%= render "shared/tag_cloud" %>
 
 	<%= render "shared/category_nav" %>
 
