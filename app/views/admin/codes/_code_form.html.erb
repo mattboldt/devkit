@@ -5,6 +5,10 @@
       <%= f.text_field :name, :class => "name" %>
     </div>
     <div class="form-block">
+       <span class="label"><%= f.label :slug %> (With hyphens)</span>
+      <%= f.text_field :slug %>
+    </div>
+    <div class="form-block">
       <span class="label"><%= f.label :body_input %> (Markdown)</span>
       <%= f.text_area :body_input, :class => "code-edit-view", :rows => "30" %>
     </div>
