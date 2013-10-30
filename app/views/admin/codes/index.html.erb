@@ -16,7 +16,7 @@
 			<tr>
 				<td><%= code.id %></td>
 				<td><%= code.name %></td>
-				<td><%= code.tag_list %></td>
+				<td><%= sanitize code.tag_list.map { |t| t }.join(", ") %></td>
 				<td><%= code.created_at %></td>
 				<td><%= link_to "Edit", edit_admin_code_path(code) %> |
 					<%= link_to "View", admin_code_path(code) %> |
