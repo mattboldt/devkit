@@ -19,6 +19,14 @@ p{
 a{
 	text-decoration: none;
 	color:#08C;
+	-webkit-transition:color .25s ease-in-out;
+	-moz-transition:color .25s ease-in-out;
+	-o-transition:color .25s ease-in-out;
+	-ms-transition:color .25s ease-in-out;
+	transition:color .25s ease-in-out;
+	&:hover{
+		color:#02516e;
+	}
 }
 .wrap{
 	position: relative;
