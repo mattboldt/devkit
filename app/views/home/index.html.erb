@@ -33,7 +33,7 @@
 			$(".home-search").focus(function(){
 				$(".search-tooltip").addClass("search-tooltip-init");
 			});
-			$(".home-search").blur(function(){
+			$(".home-submit").click(function(){
 				$(".search-tooltip").removeClass("search-tooltip-init").addClass("search-tooltip-close");
 				setTimeout(function(){$(".search-tooltip").removeClass("search-tooltip-close");}, 250)
 			});
@@ -51,7 +51,7 @@
 				<input type="submit" class="home-submit" value="Q"/>
 				<div class="search-tooltip">
 					<p>
-						Try &#8220;CSS Triangles&#8221; or &#8220;Retina Image Swapping&#8221;
+						Try &#8220;CSS Triangles&#8221; or &#8220;Meta Tag Generator&#8221;
 					</p>
 				</div>
 			</div>
@@ -62,11 +62,70 @@
 <section class="body">
 	<div class="home-wrap">
 
-		<h1 class="h1 txt-ctr">devkit is...</h1>
+	<div class="row">
+		<div class="grid col-2">
+			<h1>Code Snippets</h1>
+			<p>
+				Peronally, I'm sick of forgetting which meta tag I need to make my site responsive.
+				I also don't feel like typing out all the CSS to detect a high-res display.
+				So I've got stuff like that posted here. Copy. Paste. Done.
+			</p>
+			<%= link_to "Show me some code!", codes_path %>
+		</div>
+		<div class="grid col-2 col-img">
+			<%= image_tag("home/code-snippets.png", alt: "CSS, HTML, JavaScript, &amp; Ruby code Snippets", width: "400px") %>
+		</div>
+	</div>
 
-		<h1>Code Snippets</h1>
-		<h1>Tutorials</h1>
-		<h1>Web Development Tools</h1>
+	<div class="row">
+		<div class="grid col-2">
+			<h1>Tutorials</h1>
+			<p>
+				Not only can you easily copy and paste code you find useful, but you'll also find
+				quick tutorials as well as full-on guides to building things.
+				Expect anything from 3 lines of CSS to an entire Ruby on Rails tutorial.
+			</p>
+			<%= link_to "Teach me some code!", codes_path %>
+		</div>
+		<div class="grid col-2 col-img">
+			<%= image_tag("home/tutorials.png", alt: "Web development tutorials", width: "400px") %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="grid col-2">
+			<h1>Tools</h1>
+			<p>
+				I'm pretty lazy. What this means for you, is that I build tools to create things
+				I find myself needing time and time again. Generate custom meta tags, make awesome CSS buttons, &amp; more!
+			</p>
+			<%= link_to "I'm lazy too -- do something for me.", tools_path %>
+		</div>
+		<div class="grid col-2 col-img">
+			<%= image_tag("home/tools-graphic.png", alt: "Tools for web developers", width: "400px") %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="grid col-2">
+			<h1><em>devkit is brand new</em></h1>
+			<p>
+				What this means is this site is practically in an alpha stage.
+				I'm adding new snippets, tutorials, tools, resources, and more goodies all the time.
+			</p>
+			<p>
+				If you've got anything to contribute, please contact me: <a href="mailto:me@mattboldt.com">me@mattboldt.com</a>.
+				Chances are it'll get added and I'll credit you with a link to your website or Twitter.
+			</p>
+		</div>
+		<div class="grid col-2">
+			<h2><em>What's to come:</em></h2>
+			<p>
+				Right now this site is pretty much read-only. In the future, I plan to open it up publicly for
+				users to join and contribute. Follow me on <a href="http://www.twitter.com/atmattb">Twitter</a> to stay updated!
+			</p>
+		</div>
+	</div>
 
 
 	</div>
