@@ -1,0 +1,8 @@
+<div class="wrap">
+	<h1>docs</h1>
+	<ul class="doc-list">
+	<% for doc in @docs %>
+		<li><%= link_to doc.title, [@tool, doc] %></li>
+	<% end %>
+	</ul>
+</div>
