@@ -4,7 +4,7 @@
 	<% end %>
 	<% if @params %>
 	<ul class="tag-cloud tags--current">
-		<li class="list-head">Current Tags:</li>
+		<li class="list-head">Current filter:</li>
 			<% @params.each do |tag| %>
 
 				<% if @params.length > 1 %>
@@ -13,8 +13,9 @@
 						<%= link_to "-", code_tag_path(params[:tag].gsub(tag, "")).gsub("//", "/"), :class => "tag--remove-link" %>
 					</li>
 				<% else %>
-					<li>
+					<li class="add">
 						<%= link_to tag.gsub("-", " ").capitalize, code_tag_path(tag) %>
+						<%= link_to "-", code_tags_path, :class => "tag--remove-link" %>
 					</li>
 				<% end %>
 
@@ -23,7 +24,7 @@
 	<% end %>
 
 	<ul class="tag-cloud tags--add">
-		<li class="list-head">Add Tags:</li>
+		<li class="list-head">Filter by tag:</li>
 		<% @tags.each do |tag| %>
 
 			<% if @tags.length > 1  && @params %>
