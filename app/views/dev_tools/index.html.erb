@@ -4,7 +4,7 @@
 		<h1>All Tools</h1>
 		<% if @tools.exists? %>
 			<% for tool in @tools %>
-					<h3 class="h3"><%= tool.title %></h3>
+					<h3 class="h3"><%= tool.name %></h3>
 					<p><%= tool.desc %></p>
 					<div class="btn btn-small">
 						<%= link_to "View", tool_path(tool) %>
