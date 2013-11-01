@@ -5,7 +5,7 @@ class AdminController < ApplicationController
 
   def get_models
     @codes = Code.all
-    @tools = DevTool.all
+    @tools = Tool.all
     @blog_posts = BlogPost.all
   end
 

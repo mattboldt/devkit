@@ -21,10 +21,10 @@ Devkit::Application.routes.draw do
 
 
   # Tools route
-  get "/tools/tags/:tag", to: "dev_tools#index", as: :tool_tag
-  resources :tools, :controller => "dev_tools" do
+  get "/tools/tags/:tag", to: "tools#index", as: :tool_tag
+  resources :tools do
     # Tool docs
-    resources :docs, :controller => "tools/docs"
+    resources :docs
   end
 
 
