@@ -1,0 +1,34 @@
+<% title @tool.name + " | Tools | Devkit" %>
+<% content_for :html do %>
+	<html itemscope itemtype="http://schema.org/Product">
+<% end %>
+<% content_for :head do %>
+
+<%= @tool.head %>
+<!-- Basic meta info -->
+<meta name="name" content="<%= @tool.name %>" />
+<meta name="description" content="<%= @tool.desc %>" />
+
+<!-- G+ Open Graph -->
+<meta property="og:title" content="<%= @tool.name %> | Tools | Devkit" />
+<meta property="og:image" content="http://" />
+<meta property="og:description" content="<%= @tool.desc %>" />
+
+<meta name="twitter:title" content="<%= @tool.name %> | Tools | Devkit" />
+<meta name="twitter:description" content="<%= @tool.desc %>" />
+<meta name="twitter:image" content="http://" />
+
+<% end %>
+
+<% content_for :nav do %>
+	<%= link_to "Docs", tool_docs_path(@tool) %>
+<% end %>
+
+<section class="header">
+	<div class="wrap" style="text-align:center;">
+		<h2 class="tagline"><%= @tool.name %></h2>
+		<p style="max-width:500px;margin:20px auto;"><%= @tool.desc %></p>
+	</div>
+</section>
+
+<p><%= @tool.body %></p>

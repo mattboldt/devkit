@@ -1,0 +1,30 @@
+
+<div class="wrap">
+	<table class="admin-table">
+		<thead>
+			<tr>
+				<th><%= sortable("id", "ID") %></th>
+				<th><%= sortable("name", "Name") %></th>
+				<th>Tag List</th>
+				<th><%= sortable("created_at", "Created At") %></th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<h1><%= link_to "+ New blog_post", new_admin_blog_post_path %></h1>
+			<% for post in @blog_posts %>
+			<tr>
+				<td><%= post.id %></td>
+				<td><%= post.title %></td>
+				<td><%= sanitize post.tag_list.map { |t| t }.join(", ") %></td>
+				<td><%= blog_post.created_at %></td>
+				<td><%= link_to "Edit", edit_admin_blog_post_path(post) %> |
+					<%= link_to "View", admin_blog_post_path(post) %> |
+					<%= link_to "Delete", [:admin, post], method: :delete,
+												data: { confirm: "Are you sure you want to delete this blog_post?" } %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
