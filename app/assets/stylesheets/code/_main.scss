@@ -9,45 +9,56 @@
 
 .code--block{
 	display: block;
-	width:750px;
+	position: relative;
+	width:100%;
 	vertical-align: top;
-	margin:0 auto 40px;
-	border-radius:5px;
-	// box-shadow:rgba(0,0,0,0.2) 0px 1px 3px;
+	margin:0 0 2em;
 	overflow: hidden;
 }
 
 	.code--title{
-		padding:10px 0;
-		font-size: 1.5em;
+		// padding:0 .5em;
 		a{
 			display: inline-block;
-			padding:10px;
-			color:#222;
-			border:transparent 2px solid;
-			border-radius:5px;
+			padding:10px 0;
+			color:#08C;
+			font-size: 1.5em;
 			-webkit-transition:all .1s ease-in-out;
 			&:hover{
-				color:#08C;
-				border:#EEE 2px solid;
+				// text-decoration: underline;
 			}
 		}
 		// @include linear-gradient(top, #f8f8f8, #eee);
 	}
+		.code-actions{
+			float:right;
+			a{
+				display: inline-block;
+				padding:.5em;
+				font-size: .75em;
+				border-radius:5px;
+				border:#CCC 1px solid;
+				&:hover{
+					@include linear-gradient(top, #FFF, #e5e5e7);
+					box-shadow:rgba(0,0,0,0.2) 0px 1px 3px;
+					border-color:#999;
+				}
+			}
+		}
 	.code--body{
 		position: relative;
-		// pre{
-		// 	padding:20px;
-		// 	color:#f8f8f8;
-		// 	text-shadow:#000 0px -1px 0px;
-		// 	background:#333;
-		// }
+		margin:0 auto .45em;
+		padding:0 0 1.25em;
+		border-bottom:#f0f0f0 1px solid;
 		code{
 			margin:0 !important;
 		}
 		pre{
 			margin:0 !important;
 			// text-shadow:rgba(0,0,0,0.8) 0px -1px 0px;
+		}
+		p{
+			padding:.25em .5em;
 		}
 	}
 		.link-overlay{
@@ -60,14 +71,15 @@
 			width:100%;
 			height:100%;
 			z-index:999;
-			border-radius:4px;
+			// border-radius:5px;
 			&:hover{
-				box-shadow:inset #08C 0 0 0 2px;
+				box-shadow:inset #08C 0 0 0 1px;
 			}
 		}
 	.code--foot{
-		padding:5px 0;
+		padding:.25em 0 .65em;
 		background:#fff;
+		border-bottom:#f0f0f0 1px solid;
 		p{
 			float:left;
 			margin:0 10px 0 0;
@@ -76,15 +88,24 @@
 				border-right:#f0f0f0 1px solid;
 			}
 		}
-		.view-code{
-			float:right;
-			padding:5px 20px;
-			border:#08C 2px solid;
-			border-radius:5px;
-			text-shadow:none;
-			&:hover{
-				color:#fff;
-				background:#08C;
+		.code-tags{
+			margin:0;
+			padding:0;
+			list-style: none;
+			li{
+				display: inline-block;
+			}
+			a{
+				display: block;
+				padding:.35em .75em;
+				font-size: .85em;
+				border-radius:5px;
+				border:#CCC 1px solid;
+				&:hover{
+					@include linear-gradient(top, #FFF, #e5e5e7);
+					box-shadow:rgba(0,0,0,0.2) 0px 1px 3px;
+					border-color:#999;
+				}
 			}
 		}
 	}
@@ -122,18 +143,21 @@
 // ----------------------------------------------------------------------
 
 .tag-cloud{
+	display: block;
 	list-style: none;
 	margin:0;
 	padding:0;
 	li{
-		display: inline-block;
-		@include linear-gradient(top, #f6f6f8, #e5e5e7);
+		display: block;
+		margin:.5em auto;
+		// @include linear-gradient(top, #f6f6f8, #e5e5e7);
 		border-radius:5px;
-		border:#999 1px solid;
+		border:#CCC 1px solid;
 		overflow: hidden;
 		&:hover{
 			@include linear-gradient(top, #FFF, #e5e5e7);
 			box-shadow:rgba(0,0,0,0.2) 0px 1px 3px;
+			border-color:#999;
 		}
 	}
 	.list-head{
@@ -147,15 +171,19 @@
 	}
 	a{
 		display: block;
+		width:100%;
 		float: left;
 		padding:.5em 1em;
 		color:#222;
 		font-size: .85em;
+	}
+	.add a{
+		width:80%;
 		box-shadow: inset rgba(0,0,0,.1) -1px 0px 0px, rgba(255,255,255,0.3) 1px 0px 0px;
 	}
-		.tag--add-link{
+		a.tag--add-link{
+			width:20%;
 			float:left;
-			padding:.5em 1em;
 			box-shadow:none;
 			&:hover{
 				box-shadow:rgba(0,0,0,0.4) 0px 0px 7px;
@@ -164,9 +192,9 @@
 				text-shadow:rgba(0,0,0,0.3) 0px -1px 0px;
 			}
 		}
-		.tag--remove-link{
+		a.tag--remove-link{
+			width:20%;
 			float:left;
-			padding:.5em 1em;
 			box-shadow:none;
 			&:hover{
 				box-shadow:rgba(0,0,0,0.4) 0px 0px 7px;
@@ -179,9 +207,10 @@
 
 .tags--current{
 	li{
-		@include linear-gradient(top, #C9DE33, #B9CC2F);
+		border-color:#999;
+		@include linear-gradient(top, rgb(119, 201, 229), rgb(100, 173, 216));
 		&:hover{
-			@include linear-gradient(top, #DCF238, #B9CC2F);
+			@include linear-gradient(top, rgb(129, 219, 248), rgb(108, 188, 234));
 		}
 		a{
 			color:#fff;

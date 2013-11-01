@@ -31,14 +31,44 @@ a{
 .wrap{
 	position: relative;
 	margin:20px auto;
-	max-width:1000px;
+	max-width:1050px;
 	padding:0 20px;
 	clear: both;
+	overflow: hidden;
 }
-
 
 .narrow{
 	max-width:700px;
+}
+
+.main{
+	width:80%;
+	max-width:780px;
+	float:left;
+	margin-right:1.5em;
+}
+.sidebar{
+	width:20%;
+	float:left;
+	max-width:280px;
+	margin:2em auto 1em;
+	padding:10px 10px;
+	background-color:#f8f8f8;
+	border-radius:5px;
+	p{
+		margin: 0;
+		padding:.15em .25em;
+		border-radius:3px;
+	}
+	.error{
+		-webkit-animation:glow 5s 1;
+	}
+	@include clearfix();
+}
+
+@-webkit-keyframes glow{
+	0% { background:#F99C96 }
+	100% { background: none; }
 }
 
 .ugh{
