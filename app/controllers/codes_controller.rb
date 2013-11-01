@@ -1,12 +1,13 @@
 class CodesController < ApplicationController
 
   def index
-      @codes = Code.find(:all, :order => "updated_at DESC")
+      @codes = Code.find(:all, :order => "created_at DESC")
       @tags = Code.tag_counts_on(:tags).join(", ").split(", ").sort!
   end
 
   def show
     @code = Code.find(params[:id])
+    @tags = Code.tag_counts_on(:tags).join(", ").split(", ").sort!
     redirect_to_good_slug(@code) and return if bad_slug?(@code)
   end
 

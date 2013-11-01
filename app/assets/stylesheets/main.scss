@@ -14,17 +14,6 @@
 	@include linear-gradient(top, #3399cc, #08C);
 }
 
-.main{
-	max-width:750px;
-	float:left;
-}
-.sidebar{
-	float:left;
-	max-width:200px;
-	margin:40px auto 0;
-	padding:20px 10px;
-}
-
 
 @import "nav";
 

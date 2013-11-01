@@ -19,4 +19,12 @@
 	font-style: normal;
 }
 
+@mixin clearfix(){
+	&:after{
+		content:"";
+		display: table;
+		clear:both;
+	}
+}
+
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,700);

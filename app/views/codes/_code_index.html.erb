@@ -3,15 +3,19 @@
     <div class="code--block center-page">
       <div class="code--title">
         <%= link_to code.name, code_path(code) %>
+        <span class="code-actions"><%= link_to "Raw", code_raw_path(code) %>
+        <%= link_to "Download", download_code_path(code) %></span>
       </div>
       <div class="code--body">
         <%= link_to "", code_path(code), :class => "link-overlay" %>
         <%= raw code.preview %>
       </div>
       <div class="code--foot">
-        <p><%= link_to "Raw", code_raw_path(code) %>
-        <%= link_to "Download", download_code_path(code) %></p>
-        <p>Tags: <%= sanitize code.tag_list.map { |t| link_to t, code_tag_path(t) }.join(" ") %></p>
+        <ul class="code-tags">
+          <% code.tag_list.map do |t| %>
+            <li><%= link_to t, code_tag_path(t) %></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   <% end %>
