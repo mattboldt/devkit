@@ -41,11 +41,18 @@ a{
 	max-width:700px;
 }
 
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+
 .main{
 	width:80%;
 	max-width:780px;
 	float:left;
-	margin-right:1.5em;
+	margin:0 1.5em 2em 0;
 }
 .sidebar{
 	width:20%;

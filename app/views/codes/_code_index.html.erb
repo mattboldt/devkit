@@ -3,11 +3,12 @@
     <div class="code--block center-page">
       <div class="code--title">
         <%= link_to code.name, code_path(code) %>
-        <span class="code-actions"><%= link_to "Raw", code_raw_path(code) %>
-        <%= link_to "Download", download_code_path(code) %></span>
+        <span class="code-actions">
+          <%= link_to "Raw", code_raw_path(code) %>
+          <%= link_to "Download", download_code_path(code) %>
+        </span>
       </div>
       <div class="code--body">
-        <%= link_to "", code_path(code), :class => "link-overlay" %>
         <%= raw code.preview %>
       </div>
       <div class="code--foot">
