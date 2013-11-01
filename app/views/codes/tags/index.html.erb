@@ -23,12 +23,13 @@
 
 
 <div class="wrap">
-	<p><%= error %></p>
+
+	<div class="main">
+		<%= render "codes/code_index" %>
+	</div>
+
 	<%= render "shared/tag_cloud" %>
 
-	<%= render "shared/category_nav" %>
-
-	<%= render "codes/code_index" %>
 </div>
 
 <script>
