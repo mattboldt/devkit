@@ -43,6 +43,7 @@ gem 'acts-as-taggable-on'
 
 gem 'newrelic_rpm'
 
+
 # markdown / syntax highlighting
 gem "pygments.rb"
 gem 'redcarpet'

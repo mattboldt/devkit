@@ -52,6 +52,8 @@ Devkit::Application.routes.draw do
   # single google search page
   get "/search" => "search#index"
 
+  get "/sitemap.xml", :to => 'sitemap#index', as: "sitemap", defaults: { format: "xml" }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
