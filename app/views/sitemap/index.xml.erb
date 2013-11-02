@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>http://www.devkit.co/</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+   </url>
+	<% for code in @codes %>
+   	<url>
+   		<loc><%= code_url(code) %></loc>
+   		<lastmod><%= code.updated_at %></lastmod>
+   		<changefreq>weekly</changefreq>
+   		<priority>0.8</priority>
+   	</url>
+	<% end %>
+   <% for tool in @tools %>
+      <url>
+         <loc><%= tool_url(tool) %></loc>
+         <lastmod><%= tool.updated_at %></lastmod>
+         <changefreq>weekly</changefreq>
+         <priority>0.7</priority>
+      </url>
+   <% end %>
+</urlset>
