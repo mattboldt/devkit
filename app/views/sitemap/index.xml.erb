@@ -8,7 +8,7 @@
 	<% for code in @codes %>
    	<url>
    		<loc><%= code_url(code) %></loc>
-   		<lastmod><%= code.updated_at.strftime("%Y-%m-%d")  %></lastmod>
+   		<lastmod><%= code.updated_at.strftime("%Y-%m-%d") %></lastmod>
    		<changefreq>weekly</changefreq>
    		<priority>0.8</priority>
    	</url>
@@ -16,7 +16,7 @@
    <% for tool in @tools %>
       <url>
          <loc><%= tool_url(tool) %></loc>
-         <lastmod><%= tool.updated_at %></lastmod>
+         <lastmod><%= tool.updated_at.strftime("%Y-%m-%d") %></lastmod>
          <changefreq>weekly</changefreq>
          <priority>0.7</priority>
       </url>
