@@ -8,7 +8,7 @@
 	<% for code in @codes %>
    	<url>
    		<loc><%= code_url(code) %></loc>
-   		<lastmod><%= code.updated_at %></lastmod>
+   		<lastmod><%= code.updated_at.strftime("%Y-%m-%d")  %></lastmod>
    		<changefreq>weekly</changefreq>
    		<priority>0.8</priority>
    	</url>
