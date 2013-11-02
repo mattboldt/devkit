@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require main
+//= require analytics
 
 jQuery.ajaxSetup({
    'beforeSend': function (xhr) {xhr.setRequestHeader("Accept", "text/html")}
