@@ -3,10 +3,10 @@
     <div class="code--block center-page">
       <div class="code--title">
         <%= link_to code.name, code_path(code) %>
-        <span class="code-actions">
+<!--         <span class="code-actions">
           <%= link_to "Raw", code_raw_path(code) %>
           <%= link_to "Download", download_code_path(code) %>
-        </span>
+        </span> -->
       </div>
       <div class="code--body">
         <%= raw code.preview %>
