@@ -1,19 +1,46 @@
 
+<% title "Tools for Web Developers | Devkit" %>
+
+<% content_for :head do %>
+<!-- Basic meta info -->
+<meta name="name" content="Tools for Web Developers | Devkit" />
+<meta name="description" content="Make web development a little easier with automated tools like meta tag generators and CSS button editors." />
+
+<!-- G+ Open Graph -->
+<meta property="og:title" content="Tools for Web Developers | Devkit" />
+<meta property="og:image" content="http://" />
+<meta property="og:description" content="Make web development a little easier with automated tools like meta tag generators and CSS button editors." />
+
+<meta name="twitter:title" content="Tools for Web Developers | Devkit" />
+<meta name="twitter:description" content="Make web development a little easier with automated tools like meta tag generators and CSS button editors." />
+<meta name="twitter:image" content="http://" />
+
+<% end %>
+
+
 <section class="body">
 	<div class="home-wrap">
-		<h1>All Tools</h1>
-		<% if @tools.exists? %>
-			<% for tool in @tools %>
-					<h3 class="h3"><%= tool.name %></h3>
-					<p><%= tool.desc %></p>
-					<div class="btn btn-small">
-						<%= link_to "View", tool_path(tool) %>
-					</div>
-					<p>Tags: <%= sanitize tool.tag_list.map { |t| link_to t, tool_tag_path(t) }.join(", ") %></p>
-			<% end %>
-		<% else %>
-			<h3>No tags match "<%= params[:tag] %>"</h3>
+		<% if error %>
+			<%= error %>
 		<% end %>
+		<div class="tool">
+			<% if @tools.any? %>
+				<% for tool in @tools %>
+						<h1 class="h1"><%= link_to tool.name, tool_path(tool) %></h1>
+						<p><%= sanitize tool.desc %></p>
+						<p>Tags: <%= sanitize tool.tag_list.map { |t| link_to t, tool_tag_path(t) }.join(", ") %></p>
+				<% end %>
+			<% else %>
+				<h3>No tags match "<%= params[:tag] %>"</h3>
+			<% end %>
+		</div>
+		<p>
+			There's only one tool here for now :(
+		</p>
+		<p>
+			But, I promise there will be much more in the future!<br />
+			And you can help by leaving me suggestions at <a href="mailto:me@mattboldt.com">me@mattboldt.com</a>
+		</p>
 	</div>
 
 </section>

@@ -37,6 +37,15 @@
 				$(".search-tooltip").removeClass("search-tooltip-init").addClass("search-tooltip-close");
 				setTimeout(function(){$(".search-tooltip").removeClass("search-tooltip-close");}, 250)
 			});
+			$(".home-submit").click(function(e){
+				e.preventDefault();
+				if($(".home-search").val() === ""){
+					$(".home-search").attr("placeholder", "Enter a search term!");
+				}
+				else{
+					$("#search-form").submit();
+				}
+			});
 		});
 	</script>
 <% end %>
@@ -45,10 +54,10 @@
 	<div class="wrap">
 		<h1 class="headline">devkit</h1>
 		<h2 class="tagline">tools &amp; resources for web developers</h2>
-		<form action="/search/" method="get">
+		<form action="/search/" id="search-form" method="get">
 			<div class="home-search-wrap">
 				<input class="home-search" placeholder="Search for code or tools." name="q" type="text" />
-				<input type="submit" class="home-submit" value="Q"/>
+				<button type="submit" class="home-submit">Search</button>
 				<div class="search-tooltip">
 					<p>
 						Try &#8220;CSS Triangles&#8221; or &#8220;Meta Tag Generator&#8221;

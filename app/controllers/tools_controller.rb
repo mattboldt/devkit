@@ -2,6 +2,10 @@ class ToolsController < ApplicationController
 	def index
 		if params[:tag]
 			@tools = Tool.tagged_with(params[:tag])
+			if !@tools.any?
+				redirect_to tools_path, status: 301,
+					error: "No tools tagged with #{params[:tag]}"
+			end
 		else
 			@tools = Tool.all
 		end
@@ -11,6 +15,7 @@ class ToolsController < ApplicationController
 		redirect_to_good_slug(@tool) and return if bad_slug?(@tool)
 		@tool.head = @tool.head.html_safe
 		@tool.body = @tool.body.html_safe
+		@tool.desc = @tool.desc.html_safe
 	end
 	# def new
 	# 	@tool = Tool.new
