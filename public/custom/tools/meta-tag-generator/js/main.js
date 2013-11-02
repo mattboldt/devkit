@@ -61,18 +61,15 @@ $(function(){
 		e.preventDefault();
 		if ($(this).data("status") === "active"){
 			$(this).data("status", "inactive");
-			$(this).html("Get the code!");
 			$(".output-wrap").removeClass("output-init");
 		}
 		else{
 			$(this).data("status", "active");
-			$(this).html("Close");
 			$(".output-wrap").addClass("output-init");
 		}
 	});
 	$(".output-close").click(function(){
 		$(".output-toggle").data("status", "inactive");
-		$(".output-toggle").html("Get the code!");
 		$(".output-wrap").removeClass("output-init");
 	});
 

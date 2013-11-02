@@ -13,7 +13,7 @@ add_flash_types :error
 	# 301 redirect to cannonical slug
 	def redirect_to_good_slug(object)
 		redirect_to params.merge({
-				:controller => controller,
+				# :controller => controller,
 				:action => params[:action],
 				:id => object.to_param,
 				:status => :moved_permanently
