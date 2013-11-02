@@ -82,9 +82,14 @@ body {
     font-size: 1em;
     border: #CCC 1px solid;
     border-radius: 3px;
+    -webkit-box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 3px;
     box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 3px;
     outline: none;
-    -webkit-transition: box-shadow 0.1s ease-in-out; }
+    -webkit-transition: box-shadow 0.1s ease-in-out;
+    -moz-transition: box-shadow 0.1s ease-in-out;
+    -o-transition: box-shadow 0.1s ease-in-out;
+    -ms-transition: box-shadow 0.1s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out; }
     .form-block input:focus, .form-block textarea:focus {
       box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 3px, #0088cc 0px 0px 0px 1px, #0088cc 0px 0px 7px; }
   .form-block .desc {
@@ -156,9 +161,15 @@ input[type=checkbox] {
     display: none;
     position: absolute;
     left: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
     opacity: 0;
     background: #fff;
     -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     text-align: left;
     z-index: 999; }
   .help .init {
@@ -183,11 +194,16 @@ input[type=checkbox] {
   height: 0px;
   overflow: hidden;
   background: #fafafa;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 30px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 30px;
   z-index: 9999;
   width: 100%;
   overflow: auto;
-  -webkit-transition: height 0.2s cubic-bezier(0.5, 0.5, 0.5, 1.15); }
+  -webkit-transition: height 0.2s cubic-bezier(0.5, 0.5, 0.5, 1.15);
+  -moz-transition: height 0.2s cubic-bezier(0.5, 0.5, 0.5, 1.15);
+  -o-transition: height 0.2s cubic-bezier(0.5, 0.5, 0.5, 1.15);
+  -ms-transition: height 0.2s cubic-bezier(0.5, 0.5, 0.5, 1.15);
+  transition: height 0.2s cubic-bezier(0.5, 0.5, 0.5, 1.15); }
   @media (max-width: 1050px) {
     .output-wrap {
       width: auto;
@@ -218,6 +234,12 @@ input[type=checkbox] {
     text-shadow: #000 0px -1px 0px; }
     .output-toggle-wrap a:hover {
       background: #444; }
+    .output-toggle-wrap a span {
+      background: #33C925;
+      padding: .5em;
+      border-radius: 4px; }
+      .output-toggle-wrap a span:hover {
+        background: #39E02D; }
 
 .output-close {
   position: fixed;
@@ -249,11 +271,24 @@ input[type=checkbox] {
     border-radius: 5px;
     color: #fff;
     text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0px;
-    background-image: -webkit-linear-gradient(top, #2173c5, #155697); }
+    background-image: -webkit-linear-gradient(top, #2173c5, #155697);
+    background-image: -moz-linear-gradient(top, #2173c5, #155697);
+    background-image: -ms-linear-gradient(top, #2173c5, #155697);
+    background-image: -o-linear-gradient(top, #2173c5, #155697);
+    background-image: linear-gradient(top, #2173c5, #155697); }
     .output-head a:hover {
-      background-image: -webkit-linear-gradient(top, #3b8cde, #155697); }
+      background-image: -webkit-linear-gradient(top, #3b8cde, #155697);
+      background-image: -moz-linear-gradient(top, #3b8cde, #155697);
+      background-image: -o-linear-gradient(top, #3b8cde, #155697);
+      background-image: -ms-linear-gradient(top, #3b8cde, #155697);
+      background-image: linear-gradient(top, #3b8cde, #155697); }
     .output-head a:active {
       background-image: -webkit-linear-gradient(top, #2173c5, 10%, #155697);
+      background-image: -moz-linear-gradient(top, #2173c5, 10%, #155697);
+      background-image: -o-linear-gradient(top, #2173c5, 10%, #155697);
+      background-image: -ms-linear-gradient(top, #2173c5, 10%, #155697);
+      background-image: linear-gradient(top, #2173c5, 10%, #155697);
+      -webkit-box-shadow: inset rgba(0, 0, 0, 0.4) 0px 2px 5px;
       box-shadow: inset rgba(0, 0, 0, 0.4) 0px 2px 5px; }
 
 .output {
@@ -272,6 +307,18 @@ input[type=checkbox] {
     margin-bottom: 15px; }
   .output ::selection {
     background: #adccf9; }
+
+.output-toggle-notice {
+  position: fixed;
+  bottom: 70px;
+  left: 20px;
+  color: #33C925;
+  background: #fff;
+  padding: .5em;
+  text-shadow: none;
+  border-radius: 5px;
+  opacity: 0.6;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px; }
 
 .complete {
   max-width: 700px;

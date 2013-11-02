@@ -124,3 +124,16 @@ h6, .h6 {
 .container{
 	clear:both;
 }
+
+.footer{
+	clear:both;
+	padding:2em 1em;
+	width:100%;
+	@include linear-gradient(top, #444, #333);
+	color:#f8f8f8;
+	text-shadow:#000 0px 1px 1px;
+}
+	.footer-wrap{
+		max-width:900px;
+		margin:auto;
+	}

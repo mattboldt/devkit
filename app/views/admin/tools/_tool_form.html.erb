@@ -9,6 +9,10 @@
       <%= f.text_field :slug %>
     </div>
     <div class="form-block">
+      <span class="label"><%= f.label :desc %> (Describe the snippet)</span>
+      <%= f.text_area :desc, :class => "code-edit-view", :rows => "10" %>
+    </div>
+    <div class="form-block">
       <span class="label"><%= f.label :head %> (Scripts &amp; Styles for the page)</span>
       <%= f.text_area :head, :class => "code-edit-view", :rows => "10" %>
     </div>

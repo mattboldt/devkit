@@ -47,7 +47,7 @@
 	.home-search{
 		display: block;
 		float:left;
-		width:100%;
+		width:80%;
 		max-width:500px;
 		padding:20px 0;
 		font-size: 1.5em;
@@ -58,14 +58,23 @@
 	.home-submit{
 		display: block;
 		float: right;
-		margin:5px 10px 0 0;
-		padding:20px 25px;
+		width:18%;
+		margin:.30em 5px 0 0;
+		padding:.75em 1em;
 		color:#fff;
+		font-size: 1.25em;
 		text-shadow:rgba(0,0,0,0.3) 0px -1px 0px;
 		@include border-radius(5px);
-		@include linear-gradient(top, #7a99c1, #2c4361);
+		@include linear-gradient(top, #444, #111);
 		box-shadow: inset rgba(255,255,255,0.3) 0px 1px 0px;
-		border:#006399 1px solid;
+		border:#000 1px solid;
+		outline: none;
+		&:hover{
+			@include linear-gradient(top, #555, #222);
+		}
+		&:active{
+			@include linear-gradient(bottom, #444, #111);
+		}
 	}
 		.search-tooltip{
 			position: absolute;
