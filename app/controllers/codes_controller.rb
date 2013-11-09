@@ -11,16 +11,16 @@ class CodesController < ApplicationController
     redirect_to_good_slug(@code) and return if bad_slug?(@code)
   end
 
-  def new
-    @code = Code.new
-  end
+  # def new
+  #   @code = Code.new
+  # end
 
-  def edit
-    @code = Code.find(params[:id])
-  end
+  # def edit
+  #   @code = Code.find(params[:id])
+  # end
 
-  def update
-  end
+  # def update
+  # end
 
   def download
     @code = Code.find(params[:id])
