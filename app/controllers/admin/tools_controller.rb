@@ -49,6 +49,6 @@ class Admin::ToolsController < AdminController
     end
 
     def tool_params
-      params.require(:tool).permit(:name, :desc, :body, :preview_input, :filetype, :raw, :slug, :tag_list)
+      params.require(:tool).permit(:name, :head, :desc, :body, :preview_input, :filetype, :raw, :slug, :tag_list)
     end
 end
