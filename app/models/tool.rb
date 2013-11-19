@@ -16,7 +16,12 @@
 class Tool < ActiveRecord::Base
 	# attr_accessible :body, :head, :title, :slug, :desc, :category_id
 	validates_uniqueness_of :slug
+
 	has_many :docs
+	accepts_nested_attributes_for :docs
+	has_many :uploads
+	accepts_nested_attributes_for :uploads
+
 	acts_as_taggable
 	validates :name, presence: true
 	validates :desc, presence: true
@@ -30,7 +35,6 @@ class Tool < ActiveRecord::Base
 	def before_save
 		slug = slug.downcase
 	end
-	accepts_nested_attributes_for :docs
 
 	# searchable do
 	# 	text :title, :desc
