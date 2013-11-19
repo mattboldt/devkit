@@ -1,5 +1,5 @@
   <div id="code-form" class="admin-form code-form">
-  <%= form_for [:admin, @tool] do |f| %>
+  <%= form_for([:admin, @tool], html: { multipart: true }) do |f| %>
     <%= render "admin/tools/error_messages" %>
     <div class="form-block">
       <%= f.text_field :name, :class => "name", :placeholder => "Name" %>
@@ -11,6 +11,15 @@
     <div class="form-block">
       <span class="label"><%= f.label :desc %> (Describe the snippet)</span>
       <%= f.text_area :desc, :class => "code-edit-view", :rows => "10" %>
+    </div>
+    <div>
+      <%= f.fields_for :uploads do |upload| %>
+        <% if upload.object.new_record? %>
+          <%= upload.file_field :attachment %>
+        <% else %>
+          <p><%= upload.object.attachment.url %></p>
+        <% end %>
+      <% end %>
     </div>
     <div class="form-block">
       <span class="label"><%= f.label :head %> (Scripts &amp; Styles for the page)</span>

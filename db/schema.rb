@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131102205626) do
+ActiveRecord::Schema.define(version: 20131110201441) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -98,6 +98,18 @@ ActiveRecord::Schema.define(version: 20131102205626) do
     t.string   "slug"
     t.integer  "category_id"
   end
+
+  create_table "uploads", force: true do |t|
+    t.integer  "tool_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+  end
+
+  add_index "uploads", ["tool_id"], name: "index_uploads_on_tool_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
