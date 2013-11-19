@@ -4,7 +4,7 @@ body {
 
 .button-gen-wrap {
   position: relative;
-  max-width: 1000px;
+  width: 1000px;
   padding: 0 10px;
   margin: auto;
   overflow: hidden; }
