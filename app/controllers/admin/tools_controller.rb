@@ -10,6 +10,7 @@ class Admin::ToolsController < AdminController
 
   def new
     @tool = Tool.new
+    4.times { @tool.uploads.build }
   end
 
   def create
@@ -24,6 +25,7 @@ class Admin::ToolsController < AdminController
 
   def edit
     @tool = Tool.find(params[:id])
+    4.times { @tool.uploads.build }
   end
 
   def update
@@ -49,6 +51,7 @@ class Admin::ToolsController < AdminController
     end
 
     def tool_params
-      params.require(:tool).permit(:name, :head, :desc, :body, :preview_input, :filetype, :raw, :slug, :tag_list)
+      # params.require(:tool).permit(:name, :head, :desc, :body, :preview_input, :filetype, :raw, :slug, :tag_list, :upload_attributes)
+      params.require(:tool).permit!
     end
 end

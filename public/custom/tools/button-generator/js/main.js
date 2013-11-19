@@ -1,5 +1,27 @@
 $(function(){
 	new dataInsert();
+		$(".output a").click(function(e){
+			e.preventDefault();
+		});
+	var $output   = $(".output-wrap-inner"),
+	$window    = $(window),
+		offset     = $(".output-wrap").offset(),
+		formBlock = $(".output-wrap-inner").offset(),
+		topPadding = 15;
+
+
+	$window.scroll(function() {
+		if ($window.scrollTop() > offset.top) {
+		$output
+			.stop().animate({ top: "40px"})
+			.css("position", "fixed");
+		}
+		else {
+		$output
+			.stop().animate({ top: "0px" })
+			.css("position", "static");
+		}
+	});
 });
 
 var dataInsert = function(){

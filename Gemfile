@@ -38,10 +38,15 @@ gem 'inherited_resources', github: 'josevalim/inherited_resources'
 gem 'ransack'
 gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'formtastic',          github: 'justinfrench/formtastic'
+gem 'simple_form'
 
+# tagging
 gem 'acts-as-taggable-on'
 
+#new relic app analytics
 gem 'newrelic_rpm'
+
+gem "paperclip"
 
 
 # markdown / syntax highlighting
