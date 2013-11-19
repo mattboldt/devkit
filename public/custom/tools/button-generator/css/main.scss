@@ -1,11 +1,118 @@
+body{
+	padding:0 0 100px;
+	background:#f8f8f8;
+}
+
+.button-gen-wrap{
+	position: relative;
+	width:1000px;
+	padding:0 10px;
+	margin:auto;
+	overflow: hidden;
+}
+.intro-wrap{
+	padding:.05em .75em;
+	background:#fff;
+	border-radius: 5px;
+	border:#d0d0d0 1px solid;
+}
+
+.input{
+	float:left;
+	max-width:570px;
+	margin-right:20px;
+}
+
+.output-wrap{
+	position: relative;
+	margin:0px auto;
+	width:360px;
+	height:500px;
+	float:left;
+}
+	.output-wrap-inner{
+		width:360px;
+		padding:.25em 1em 1em;
+		background:#fff;
+		border-radius: 5px;
+		border:#d0d0d0 1px solid;
+	}
 
 .raw-wrap{
-  max-width:500px;
+  max-width:700px;
+  margin:auto;
   overflow: auto;
   background:#f8f8f8;
   border:#CCC 1px solid;
   border-radius:5px;
   padding:10px;
+  pre{
+  	white-space: pre;
+  }
+}
+
+.output{
+	margin:2em auto;
+	text-align: center;
+}
+
+
+#button-form{
+	.sc-btn{
+	padding: .75em 0em .7em 40px !important;
+		input[type=radio]{
+			position: absolute;
+			top:50%;
+			left:10px;
+			margin-top:-10px;
+			width:20px;
+			height:20px;
+			border:rgba(0,0,0,0.6) 1px solid;
+			border-radius: 3px;
+			background-color:#fff;
+			box-shadow:inset rgba(0,0,0,0.2) 0px 2px 2px;
+			-webkit-appearance:none;
+			outline: none;
+			&:checked{
+				background:url(../check.svg) no-repeat #fff;
+				background-size: 18px 18px;
+			}
+		}
+		label{
+			float: left;
+			font-size: .9em;
+		}
+	}
+}
+
+.custom-text{
+	padding:.5em;
+	font-size: 1.5em;
+}
+
+#button-form label{
+	display: inline-block;
+}
+.button-labels{
+	list-style: none;
+	margin:0;
+	padding:0;
+	display: inline-block;
+	vertical-align: top;
+	li{
+		width:auto;
+		// margin:0 0 1em;
+		padding:.35em;
+		display: block;
+	}
+	label{
+		min-width:130px;
+		cursor: pointer;
+		text-align: left;
+	}
+	input{
+		cursor: pointer;
+	}
 }
 
 @import "sc-buttons";
