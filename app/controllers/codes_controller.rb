@@ -1,7 +1,7 @@
 class CodesController < ApplicationController
 
   def index
-      @codes = Code.find(:all, :order => "created_at DESC")
+      @codes = Code.paginate(:page => params[:page], :per_page => 15, :order => "created_at DESC")
       @tags = Code.tag_counts_on(:tags).join(", ").split(", ").sort!
   end
 
