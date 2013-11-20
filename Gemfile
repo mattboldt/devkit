@@ -48,6 +48,8 @@ gem 'newrelic_rpm'
 
 gem "paperclip"
 
+gem 'will_paginate', '~> 3.0'
+
 
 # markdown / syntax highlighting
 gem "pygments.rb"
