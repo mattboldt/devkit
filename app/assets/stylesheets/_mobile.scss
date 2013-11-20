@@ -1,0 +1,71 @@
+@media screen and (max-width:800px){
+	// Nav stuff
+	.nav-wrap{
+		form{
+			display: none !important;
+		}
+	}
+	.main-nav{
+		li{
+			& > a{
+				padding:.75em .65em .5em !important;
+				border:none !important;
+				box-shadow: none !important;
+			}
+		}
+		h3{
+			padding:.8em .5em .8em;
+		}
+	}
+	.main-nav-dropdown{
+		display: none;
+	}
+		.wrap{
+			padding:0 5px !important;
+		}
+	.search-tooltip{
+		display: none;
+	}
+	.headline{
+		font-size: 4em;
+	}
+	.home-search{
+		width:70%;
+		padding:.75em 0 .75em 0em;
+		font-size: 1em;
+	}
+	.home-submit{
+		padding:.5em .25em;
+		font-size: 1em;
+		width:70px;
+	}
+
+	// Code snippet stuff
+	.main{
+		width:100% !important;
+		margin:0 auto !important;
+	}
+	.sidebar{
+		width:100% !important;
+	}
+
+	.grid{
+		display: block;
+		float:none;
+		margin:0 auto;
+		h1{
+			margin:0;
+			font-size: 1.5em;
+		}
+		p{
+			font-size: .85em;
+		}
+		img{
+			display: block;
+			width:100%;
+		}
+	}
+		.col-2{
+			width:95%;
+		}
+}
